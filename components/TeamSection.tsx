@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 type Founder = {
   id: string;
   initials: string;
+  photo: string;
   name: string;
   roleKey: string;
   domainKey: string;
@@ -25,6 +26,7 @@ const FOUNDERS: Founder[] = [
   {
     id: 'mohamed',
     initials: 'ME',
+    photo: '/team/mohamed-ennaciri.png',
     name: 'Mohamed Ennaciri',
     roleKey: 'team.role.cofounder',
     domainKey: 'team.f1.domain',
@@ -38,6 +40,7 @@ const FOUNDERS: Founder[] = [
   {
     id: 'samir',
     initials: 'SB',
+    photo: '/team/samir-brahmi.png',
     name: 'Samir Brahmi',
     roleKey: 'team.role.cofounder',
     domainKey: 'team.f2.domain',
@@ -151,12 +154,17 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
       <div className="relative flex items-start gap-4">
         <div
           className={cn(
-            'flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br font-display text-xl font-extrabold text-bone ring-1',
+            'relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br ring-1',
             grad,
             ring
           )}
         >
-          {founder.initials}
+          <img
+            src={founder.photo}
+            alt={founder.name}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
         </div>
         <div className="min-w-0">
           <div className="flex items-center gap-2">
