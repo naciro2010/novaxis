@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 import SectionHeader from './SectionHeader';
 import Counter from './Counter';
-import { Cpu, Scale, Linkedin, X, BadgeCheck } from 'lucide-react';
+import { Cpu, Scale, Linkedin, X, BadgeCheck, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type Founder = {
@@ -12,8 +12,11 @@ type Founder = {
   initials: string;
   name: string;
   roleKey: string;
+  domainKey: string;
   titleKey: string;
   taglineKey: string;
+  markersLabelKey: string;
+  markerKeys: string[];
   tone: 'it' | 'acc';
   icon: typeof Cpu;
 };
@@ -23,9 +26,12 @@ const FOUNDERS: Founder[] = [
     id: 'mohamed',
     initials: 'ME',
     name: 'Mohamed Ennaciri',
-    roleKey: 'team.role.cto',
+    roleKey: 'team.role.cofounder',
+    domainKey: 'team.f1.domain',
     titleKey: 'team.f1.title',
     taglineKey: 'team.f1.tagline',
+    markersLabelKey: 'team.f1.markers.label',
+    markerKeys: ['team.f1.m.1', 'team.f1.m.2', 'team.f1.m.3', 'team.f1.m.4'],
     tone: 'it',
     icon: Cpu
   },
@@ -33,9 +39,12 @@ const FOUNDERS: Founder[] = [
     id: 'samir',
     initials: 'SB',
     name: 'Samir Brahmi',
-    roleKey: 'team.role.expert',
+    roleKey: 'team.role.cofounder',
+    domainKey: 'team.f2.domain',
     titleKey: 'team.f2.title',
     taglineKey: 'team.f2.tagline',
+    markersLabelKey: 'team.f2.markers.label',
+    markerKeys: ['team.f2.m.1', 'team.f2.m.2', 'team.f2.m.3'],
     tone: 'acc',
     icon: Scale
   }
@@ -87,8 +96,8 @@ export default function TeamSection() {
         {/* Stats */}
         <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { v: 17, suf: '+', label: t('team.stat.1') },
-            { v: 2, suf: '', label: t('team.stat.2') },
+            { v: 20, suf: '+', label: t('team.stat.1') },
+            { v: 17, suf: '+', label: t('team.stat.2') },
             { v: 100, suf: '%', label: t('team.stat.3') },
             { v: 100, suf: '%', label: t('team.stat.4') }
           ].map((s, i) => (
@@ -173,15 +182,37 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
             <Icon size={11} />
             {t(founder.roleKey)}
           </div>
+          {/* Domaine + 20 ans (meme niveau d'expertise pour les deux fondateurs) */}
+          <div className="mt-1.5 font-mono text-[11px] tracking-wide text-ash">
+            {t(founder.domainKey)}
+          </div>
         </div>
       </div>
 
-      {/* Expert headline */}
-      <p className="relative mt-6 font-display text-lg font-bold leading-snug text-bone sm:text-xl">
-        {t(founder.titleKey)}
+      {/* Visionary headline */}
+      <p className="relative mt-6 flex items-start gap-2 font-display text-lg font-bold leading-snug text-bone sm:text-xl">
+        <Sparkles size={16} className={cn('mt-1 shrink-0', tone === 'it' ? 'text-accent-violet' : 'text-accent-emerald')} />
+        <span>{t(founder.titleKey)}</span>
       </p>
 
       <p className="relative mt-3 text-sm leading-relaxed text-ash">{t(founder.taglineKey)}</p>
+
+      {/* Markers (clients / domaines) */}
+      <div className="relative mt-6">
+        <div className="mb-2.5 font-mono text-[10px] uppercase tracking-[0.22em] text-ash/70">
+          {t(founder.markersLabelKey)}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {founder.markerKeys.map((mk) => (
+            <span
+              key={mk}
+              className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-bone/80"
+            >
+              {t(mk)}
+            </span>
+          ))}
+        </div>
+      </div>
     </motion.div>
   );
 }
