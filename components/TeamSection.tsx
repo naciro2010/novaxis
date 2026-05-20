@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 import SectionHeader from './SectionHeader';
 import Counter from './Counter';
-import { Cpu, Scale, Linkedin, GraduationCap, Briefcase, X } from 'lucide-react';
+import { Cpu, Scale, Linkedin, GraduationCap, Briefcase, X, BadgeCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type Exp = { role: string; org: string; period: string; place?: string; current?: boolean };
@@ -13,7 +13,9 @@ type Founder = {
   initials: string;
   name: string;
   roleKey: string;
+  titleKey: string;
   taglineKey: string;
+  credKeys: string[];
   tone: 'it' | 'acc';
   icon: typeof Cpu;
   experience: Exp[];
@@ -27,7 +29,9 @@ const FOUNDERS: Founder[] = [
     initials: 'ME',
     name: 'Mohamed Ennaciri',
     roleKey: 'team.role.cto',
+    titleKey: 'team.f1.title',
     taglineKey: 'team.f1.tagline',
+    credKeys: ['team.f1.cred.1', 'team.f1.cred.2', 'team.f1.cred.3'],
     tone: 'it',
     icon: Cpu,
     experience: [
@@ -51,7 +55,9 @@ const FOUNDERS: Founder[] = [
     initials: 'SB',
     name: 'Samir Brahmi',
     roleKey: 'team.role.expert',
+    titleKey: 'team.f2.title',
     taglineKey: 'team.f2.tagline',
+    credKeys: ['team.f2.cred.1', 'team.f2.cred.2', 'team.f2.cred.3'],
     tone: 'acc',
     icon: Scale,
     experience: [
@@ -157,6 +163,12 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
     >
       <div className={cn('absolute -right-24 -top-24 h-56 w-56 rounded-full blur-3xl bg-gradient-to-br', grad)} />
 
+      {/* Founder ribbon */}
+      <div className="absolute end-5 top-5 inline-flex items-center gap-1.5 rounded-full border border-accent-rouge/40 bg-accent-rouge/10 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.24em] text-accent-rouge">
+        <BadgeCheck size={11} />
+        {t('team.label.founder')}
+      </div>
+
       {/* Header */}
       <div className="relative flex items-start gap-4">
         <div
@@ -195,7 +207,25 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
         </div>
       </div>
 
-      <p className="relative mt-5 text-sm leading-relaxed text-ash">{t(founder.taglineKey)}</p>
+      {/* Expert headline */}
+      <p className="relative mt-5 font-display text-lg font-bold leading-snug text-bone sm:text-xl">
+        {t(founder.titleKey)}
+      </p>
+
+      <p className="relative mt-3 text-sm leading-relaxed text-ash">{t(founder.taglineKey)}</p>
+
+      {/* Credibility markers */}
+      <ul className="relative mt-5 space-y-2">
+        {founder.credKeys.map((ck) => (
+          <li key={ck} className="flex items-center gap-2.5 text-[13px] text-bone/85">
+            <BadgeCheck
+              size={15}
+              className={cn('shrink-0', tone === 'it' ? 'text-accent-violet' : 'text-accent-emerald')}
+            />
+            {t(ck)}
+          </li>
+        ))}
+      </ul>
 
       {/* Experience timeline */}
       <div className="relative mt-7">

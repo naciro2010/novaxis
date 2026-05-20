@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     'souveraineté numérique',
     'CNDP',
     'OCR factures',
-    'Casablanca',
+    'Rabat',
     'Mistral AI',
     'IA souveraine'
   ],
@@ -80,7 +80,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               logo: 'https://novaxis.ma/logo.svg',
               address: {
                 '@type': 'PostalAddress',
-                addressLocality: 'Casablanca',
+                addressLocality: 'Rabat',
+                addressRegion: 'Agdal',
                 addressCountry: 'MA'
               },
               sameAs: ['https://linkedin.com/company/novaxis']

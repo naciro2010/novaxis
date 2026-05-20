@@ -57,8 +57,8 @@ export default function Footer() {
             <Logo />
             <p className="mt-5 max-w-sm text-sm text-ash">{t('footer.tagline')}</p>
             <div className="mt-6 space-y-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ash/70">
-              <div>NOVAXIS SARL · Casablanca, MA</div>
-              <div>RC Casablanca · ICE 00XXXX</div>
+              <div>NOVAXIS SARL · Rabat Agdal, MA</div>
+              <div>RC Rabat · ICE 00XXXX</div>
               <div>contact@novaxis.ma · +212 5 22 00 00 00</div>
             </div>
 
