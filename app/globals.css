@@ -58,14 +58,6 @@ body {
   font-family: var(--font-inter), 'IBM Plex Sans Arabic', system-ui, sans-serif;
 }
 
-/* Custom cursor */
-@media (hover: hover) and (pointer: fine) {
-  body.has-custom-cursor,
-  body.has-custom-cursor * {
-    cursor: none !important;
-  }
-}
-
 /* Decryption text container */
 .decrypt {
   font-variant-ligatures: none;

@@ -29,8 +29,11 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink-900 pt-28"
     >
+      {/* Base sombre opaque garantie : evite tout flash blanc si la scene 3D
+          ou les degrades (couches transparentes) ne sont pas encore peints. */}
+      <div className="absolute inset-0 -z-20 bg-ink-900" />
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.18),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(139,92,246,0.12),transparent_55%)]" />
       <div className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.6)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />

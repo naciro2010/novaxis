@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { LocaleProvider } from '@/lib/i18n';
 import SmoothScroll from '@/components/SmoothScroll';
-import CustomCursor from '@/components/CustomCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-ink-900 text-bone antialiased">
         <LocaleProvider>
           <SmoothScroll>
-            <CustomCursor />
             {children}
           </SmoothScroll>
         </LocaleProvider>

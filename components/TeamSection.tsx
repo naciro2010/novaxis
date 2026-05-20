@@ -4,10 +4,9 @@ import { motion } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 import SectionHeader from './SectionHeader';
 import Counter from './Counter';
-import { Cpu, Scale, Linkedin, GraduationCap, Briefcase, X, BadgeCheck } from 'lucide-react';
+import { Cpu, Scale, Linkedin, X, BadgeCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-type Exp = { role: string; org: string; period: string; place?: string; current?: boolean };
 type Founder = {
   id: string;
   initials: string;
@@ -15,12 +14,8 @@ type Founder = {
   roleKey: string;
   titleKey: string;
   taglineKey: string;
-  credKeys: string[];
   tone: 'it' | 'acc';
   icon: typeof Cpu;
-  experience: Exp[];
-  domains: string[];
-  education: string[];
 };
 
 const FOUNDERS: Founder[] = [
@@ -31,24 +26,8 @@ const FOUNDERS: Founder[] = [
     roleKey: 'team.role.cto',
     titleKey: 'team.f1.title',
     taglineKey: 'team.f1.tagline',
-    credKeys: ['team.f1.cred.1', 'team.f1.cred.2', 'team.f1.cred.3'],
     tone: 'it',
-    icon: Cpu,
-    experience: [
-      { role: 'Technical Lead', org: 'Europcar Mobility Group', period: '2022 → ', place: 'Paris', current: true },
-      { role: 'Co-Founder', org: 'Tonti (FinTech)', period: '2021 — 2023', place: 'Paris' },
-      { role: 'Lead Developer', org: 'Renault Digital', period: '2022', place: 'Paris' },
-      { role: 'Lead Developer', org: 'relevanC', period: '2021', place: 'Paris' },
-      { role: 'Technical Leader', org: 'happn', period: '2022', place: 'Paris' }
-    ],
-    domains: [
-      'Kotlin', 'Spring Boot', 'Keycloak / IAM', 'Kafka', 'AWS EKS', 'GCP',
-      'DDD', 'GenAI', 'GitLab CI/CD', 'OIDC / SSO'
-    ],
-    education: [
-      'M2 Qualité logiciel — Université de Bretagne Occidentale',
-      'Master spécialisé — Université Mohammed V, Rabat'
-    ]
+    icon: Cpu
   },
   {
     id: 'samir',
@@ -57,18 +36,8 @@ const FOUNDERS: Founder[] = [
     roleKey: 'team.role.expert',
     titleKey: 'team.f2.title',
     taglineKey: 'team.f2.tagline',
-    credKeys: ['team.f2.cred.1', 'team.f2.cred.2', 'team.f2.cred.3'],
     tone: 'acc',
-    icon: Scale,
-    experience: [
-      { role: 'Expert-comptable', org: 'SB Partners', period: '2023 → ', place: 'Rabat-Salé-Kénitra', current: true },
-      { role: 'Commissaire aux comptes', org: 'World Audit', period: '2004 — 2024', place: 'Maroc' }
-    ],
-    domains: [
-      'Audit légal', 'Commissariat aux comptes', 'Normes OHADA', 'CGI',
-      'Conseil financier', 'IFRS', 'Consolidation'
-    ],
-    education: ['MSTCF — Université Montesquieu, Bordeaux IV']
+    icon: Scale
   }
 ];
 
@@ -118,9 +87,9 @@ export default function TeamSection() {
         {/* Stats */}
         <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { v: 20, suf: '+', label: t('team.stat.1') },
-            { v: 13, suf: '+', label: t('team.stat.2') },
-            { v: 2, suf: '', label: t('team.stat.3') },
+            { v: 17, suf: '+', label: t('team.stat.1') },
+            { v: 2, suf: '', label: t('team.stat.2') },
+            { v: 100, suf: '%', label: t('team.stat.3') },
             { v: 100, suf: '%', label: t('team.stat.4') }
           ].map((s, i) => (
             <motion.div
@@ -208,89 +177,11 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
       </div>
 
       {/* Expert headline */}
-      <p className="relative mt-5 font-display text-lg font-bold leading-snug text-bone sm:text-xl">
+      <p className="relative mt-6 font-display text-lg font-bold leading-snug text-bone sm:text-xl">
         {t(founder.titleKey)}
       </p>
 
       <p className="relative mt-3 text-sm leading-relaxed text-ash">{t(founder.taglineKey)}</p>
-
-      {/* Credibility markers */}
-      <ul className="relative mt-5 space-y-2">
-        {founder.credKeys.map((ck) => (
-          <li key={ck} className="flex items-center gap-2.5 text-[13px] text-bone/85">
-            <BadgeCheck
-              size={15}
-              className={cn('shrink-0', tone === 'it' ? 'text-accent-violet' : 'text-accent-emerald')}
-            />
-            {t(ck)}
-          </li>
-        ))}
-      </ul>
-
-      {/* Experience timeline */}
-      <div className="relative mt-7">
-        <div className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-ash/70">
-          <Briefcase size={11} />
-          {t('team.label.experience')}
-        </div>
-        <ol className="relative space-y-3 border-s border-white/10 ps-4">
-          {founder.experience.map((e, i) => (
-            <li key={`${e.org}-${i}`} className="relative">
-              <span
-                className={cn(
-                  'absolute -start-[20.5px] top-1.5 h-2 w-2 rounded-full ring-2 ring-ink-900',
-                  e.current
-                    ? tone === 'it'
-                      ? 'bg-accent-violet'
-                      : 'bg-accent-emerald'
-                    : 'bg-white/30'
-                )}
-              />
-              <div className="flex flex-wrap items-baseline gap-x-2">
-                <span className="text-sm font-semibold text-bone">{e.role}</span>
-                <span className="text-sm text-ash">· {e.org}</span>
-              </div>
-              <div className="mt-0.5 font-mono text-[11px] tabular-nums text-ash/70">
-                {e.period}
-                {e.current && t('team.label.present')}
-                {e.place && <span className="text-ash/50"> — {e.place}</span>}
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* Domains */}
-      <div className="relative mt-7">
-        <div className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-ash/70">
-          {t('team.label.stack')}
-        </div>
-        <div className="flex flex-wrap gap-1.5">
-          {founder.domains.map((d) => (
-            <span
-              key={d}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-ash"
-            >
-              {d}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Education */}
-      <div className="relative mt-7 border-t border-white/8 pt-5">
-        <div className="mb-2 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-ash/70">
-          <GraduationCap size={12} />
-          {t('team.label.education')}
-        </div>
-        <ul className="space-y-1.5">
-          {founder.education.map((ed) => (
-            <li key={ed} className="text-[13px] leading-snug text-bone/80">
-              {ed}
-            </li>
-          ))}
-        </ul>
-      </div>
     </motion.div>
   );
 }
