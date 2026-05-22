@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
+import { BRAND } from '@/lib/brand';
 import SectionHeader from './SectionHeader';
 import { Scale, FileText, ShieldCheck, Brain, Code2, Database, Lock, Globe } from 'lucide-react';
 
@@ -104,7 +105,7 @@ export default function FusionSection() {
                   <div className="absolute inset-3 rounded-full border border-white/10" />
                   <div className="text-center">
                     <Globe size={28} className="mx-auto text-bone" />
-                    <div className="mt-2 font-display text-xl font-extrabold text-bone">NOVAXIS</div>
+                    <div className="mt-2 font-display text-xl font-extrabold text-bone">{BRAND.name}</div>
                     <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-ash">fusion</div>
                   </div>
                   <div className="absolute -inset-2 animate-spin-slow rounded-full border-t border-accent-blue/50" />

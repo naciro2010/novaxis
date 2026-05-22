@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { LocaleProvider } from '@/lib/i18n';
+import { BRAND } from '@/lib/brand';
 import SmoothScroll from '@/components/SmoothScroll';
 
 const inter = Inter({
@@ -17,13 +18,13 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://novaxis.ma'),
+  metadataBase: new URL(BRAND.url),
   title: {
-    default: 'NOVAXIS — L\'axe nouveau de la finance augmentée',
-    template: '%s · NOVAXIS'
+    default: `${BRAND.name} — L'axe nouveau de la finance augmentée`,
+    template: `%s · ${BRAND.name}`
   },
   description:
-    'NOVAXIS fusionne expertise comptable marocaine et intelligence artificielle souveraine pour augmenter la gestion des entreprises. Hébergé au Maroc, conforme CNDP.',
+    `${BRAND.name} fusionne expertise comptable marocaine et intelligence artificielle souveraine pour augmenter la gestion des entreprises. Hébergé au Maroc, conforme CNDP.`,
   keywords: [
     'IA Maroc',
     'comptabilité augmentée',
@@ -35,17 +36,17 @@ export const metadata: Metadata = {
     'IA souveraine'
   ],
   openGraph: {
-    title: 'NOVAXIS — L\'axe nouveau de la finance augmentée',
+    title: `${BRAND.name} — L'axe nouveau de la finance augmentée`,
     description:
       'Comptabilité × Intelligence. Souveraineté marocaine. Plateformes de gestion augmentées par IA, hébergées au Maroc.',
-    url: 'https://novaxis.ma',
-    siteName: 'NOVAXIS',
+    url: BRAND.url,
+    siteName: BRAND.name,
     locale: 'fr_MA',
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NOVAXIS — Comptabilité × Intelligence',
+    title: `${BRAND.name} — Comptabilité × Intelligence`,
     description:
       'IA souveraine pour la gestion des entreprises marocaines. Hébergé au Maroc, conforme CNDP.'
   },
@@ -73,16 +74,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'NOVAXIS',
-              url: 'https://novaxis.ma',
-              logo: 'https://novaxis.ma/logo.svg',
+              name: BRAND.name,
+              url: BRAND.url,
+              logo: `${BRAND.url}/logo.svg`,
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Rabat',
                 addressRegion: 'Agdal',
                 addressCountry: 'MA'
               },
-              sameAs: ['https://linkedin.com/company/novaxis']
+              sameAs: [BRAND.linkedin]
             })
           }}
         />

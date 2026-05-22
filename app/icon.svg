@@ -7,12 +7,12 @@
   </defs>
   <rect width="32" height="32" rx="7" fill="#0A0A0F" />
   <path
-    d="M8 24 L8 8 L24 24 L24 8"
+    d="M8 24 L8 8 L16 16 L24 8 L24 24"
     stroke="url(#nx-grad)"
     stroke-width="2.6"
     stroke-linecap="square"
     stroke-linejoin="miter"
     fill="none"
   />
-  <circle cx="16" cy="16" r="1.9" fill="#10B981" />
+  <circle cx="16" cy="9" r="1.9" fill="#10B981" />
 </svg>

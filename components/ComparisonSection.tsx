@@ -17,7 +17,7 @@ const ROWS: { keyLabel: string; values: [Cell, Cell, Cell] }[] = [
   { keyLabel: 'why.row.6', values: ['yes', 'no', 'no'] }
 ];
 
-export default function WhyNovaxisSection() {
+export default function ComparisonSection() {
   const { t } = useI18n();
 
   return (

@@ -1,6 +1,7 @@
 'use client';
 
 import { useI18n } from '@/lib/i18n';
+import { BRAND } from '@/lib/brand';
 import Logo from './Logo';
 import { Linkedin, Github } from 'lucide-react';
 
@@ -57,9 +58,9 @@ export default function Footer() {
             <Logo />
             <p className="mt-5 max-w-sm text-sm text-ash">{t('footer.tagline')}</p>
             <div className="mt-6 space-y-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ash/70">
-              <div>NOVAXIS SARL · Rabat Agdal, MA</div>
+              <div>{BRAND.legal} · Rabat Agdal, MA</div>
               <div>RC Rabat · ICE 00XXXX</div>
-              <div>contact@novaxis.ma · +212 5 22 00 00 00</div>
+              <div>{BRAND.email} · +212 5 22 00 00 00</div>
             </div>
 
             <div className="mt-6 flex items-center gap-2">
@@ -105,7 +106,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/8 pt-6 text-[11px] text-ash sm:flex-row sm:items-center">
           <div className="flex flex-wrap items-center gap-3 font-mono uppercase tracking-[0.18em]">
-            <span>© {year} NOVAXIS</span>
+            <span>© {year} {BRAND.name}</span>
             <span className="opacity-30">·</span>
             <span>{t('footer.legal.cndp')}</span>
             <span className="opacity-30">·</span>

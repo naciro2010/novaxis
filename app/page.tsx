@@ -5,7 +5,7 @@ import VisionSection from '@/components/VisionSection';
 import SolutionsSection from '@/components/SolutionsSection';
 import PartnersSection from '@/components/PartnersSection';
 import SecuritySection from '@/components/SecuritySection';
-import WhyNovaxisSection from '@/components/WhyNovaxisSection';
+import ComparisonSection from '@/components/ComparisonSection';
 import TeamSection from '@/components/TeamSection';
 import StatsSection from '@/components/StatsSection';
 import TrustSection from '@/components/TrustSection';
@@ -22,7 +22,7 @@ export default function Page() {
       <SolutionsSection />
       <PartnersSection />
       <SecuritySection />
-      <WhyNovaxisSection />
+      <ComparisonSection />
       <TeamSection />
       <StatsSection />
       <TrustSection />
