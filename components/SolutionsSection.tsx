@@ -210,7 +210,7 @@ export default function SolutionsSection() {
 
           <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent-emerald/30 bg-accent-emerald/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-accent-emerald">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-accent-gold">
                 <Sparkles size={11} />
                 {t('solutions.flagship.tag')}
               </div>
@@ -331,6 +331,18 @@ export default function SolutionsSection() {
                         animate={{ opacity: 1, y: 0 }}
                         className="mt-4 space-y-4"
                       >
+                        {/* Skeletons pendant l'analyse (lecture / OCR / classification) */}
+                        {progress < 50 && (
+                          <div className="space-y-3" aria-hidden>
+                            <div className="h-[52px] animate-pulse rounded-xl bg-white/[0.05]" />
+                            <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+                              {Array.from({ length: 4 }).map((_, i) => (
+                                <div key={i} className="h-[30px] animate-pulse rounded-lg bg-white/[0.035]" />
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
                         {/* Type détecté */}
                         {progress >= 50 && (
                           <motion.div

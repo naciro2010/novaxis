@@ -87,7 +87,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setOpen((v) => !v)}
-              className="rounded-full border border-white/10 bg-white/[0.03] p-2 text-bone md:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-bone md:hidden"
               aria-label="Menu"
             >
               {open ? <X size={18} /> : <Menu size={18} />}
@@ -104,7 +104,7 @@ export default function Navbar() {
                 key={n.key}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm text-ash hover:bg-white/5 hover:text-bone"
+                className="flex min-h-[44px] items-center rounded-lg px-3 text-sm text-ash hover:bg-white/5 hover:text-bone"
               >
                 {t(n.key)}
               </a>
@@ -117,7 +117,7 @@ export default function Navbar() {
                     key={l}
                     onClick={() => setLocale(l)}
                     className={cn(
-                      'rounded-full px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider',
+                      'flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full px-3 text-xs font-medium uppercase tracking-wider',
                       locale === l ? 'bg-bone text-ink-900' : 'text-ash'
                     )}
                   >
@@ -128,7 +128,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="rounded-full border border-accent-gold/40 bg-accent-gold/20 px-4 py-2 text-sm font-medium text-bone"
+                className="flex min-h-[44px] items-center rounded-full border border-accent-gold/40 bg-accent-gold/20 px-4 text-sm font-medium text-bone active:scale-[0.97]"
               >
                 {t('nav.cta')}
               </a>

@@ -174,7 +174,7 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
             <a
               href="#"
               aria-label={`LinkedIn ${founder.name}`}
-              className="text-ash transition-colors hover:text-accent-gold"
+              className="-m-2 inline-flex h-10 w-10 items-center justify-center rounded-full text-ash transition-colors hover:bg-white/5 hover:text-accent-gold"
             >
               <Linkedin size={15} />
             </a>

@@ -67,14 +67,14 @@ export default function Footer() {
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-ash transition-colors hover:border-white/30 hover:text-bone"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-ash transition-colors hover:border-white/30 hover:text-bone"
               >
                 <Linkedin size={15} />
               </a>
               <a
                 href="#"
                 aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-ash transition-colors hover:border-white/30 hover:text-bone"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-ash transition-colors hover:border-white/30 hover:text-bone"
               >
                 <Github size={15} />
               </a>
