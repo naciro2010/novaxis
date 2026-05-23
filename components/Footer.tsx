@@ -50,7 +50,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-white/8 pb-8 pt-20">
-      <div className="absolute inset-x-0 top-0 mx-auto h-px max-w-4xl bg-gradient-to-r from-transparent via-accent-blue/60 to-transparent" />
+      <div className="absolute inset-x-0 top-0 mx-auto h-px max-w-4xl bg-gradient-to-r from-transparent via-accent-gold/60 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-5">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2fr]">

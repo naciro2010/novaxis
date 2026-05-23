@@ -58,7 +58,7 @@ export default function TeamSection() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.08),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(154,123,48,0.08),transparent_55%)]" />
 
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
@@ -66,7 +66,7 @@ export default function TeamSection() {
           title={
             <span>
               {t('team.title').split('.')[0]}.{' '}
-              <span className="bg-gradient-to-r from-accent-blue to-accent-emerald bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 {t('team.title').split('.')[1]?.trim() || ''}.
               </span>
             </span>
@@ -129,9 +129,9 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
   const tone = founder.tone;
   const grad =
     tone === 'it'
-      ? 'from-accent-blue/40 via-accent-violet/30 to-transparent'
-      : 'from-accent-emerald/40 via-accent-blue/25 to-transparent';
-  const ring = tone === 'it' ? 'ring-accent-violet/40' : 'ring-accent-emerald/40';
+      ? 'from-accent-gold/40 via-accent-bronze/30 to-transparent'
+      : 'from-accent-gold/40 via-accent-gold/25 to-transparent';
+  const ring = tone === 'it' ? 'ring-accent-bronze/40' : 'ring-accent-champagne/40';
   const Icon = founder.icon;
 
   return (
@@ -174,7 +174,7 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
             <a
               href="#"
               aria-label={`LinkedIn ${founder.name}`}
-              className="text-ash transition-colors hover:text-accent-blue"
+              className="text-ash transition-colors hover:text-accent-gold"
             >
               <Linkedin size={15} />
             </a>
@@ -183,8 +183,8 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
             className={cn(
               'mt-1.5 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em]',
               tone === 'it'
-                ? 'border-accent-violet/30 bg-accent-violet/10 text-accent-violet'
-                : 'border-accent-emerald/30 bg-accent-emerald/10 text-accent-emerald'
+                ? 'border-accent-bronze/30 bg-accent-bronze/10 text-accent-bronze'
+                : 'border-accent-champagne/30 bg-accent-champagne/10 text-accent-champagne'
             )}
           >
             <Icon size={11} />
@@ -199,7 +199,7 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
 
       {/* Visionary headline */}
       <p className="relative mt-6 flex items-start gap-2 font-display text-lg font-bold leading-snug text-bone sm:text-xl">
-        <Sparkles size={16} className={cn('mt-1 shrink-0', tone === 'it' ? 'text-accent-violet' : 'text-accent-emerald')} />
+        <Sparkles size={16} className={cn('mt-1 shrink-0', tone === 'it' ? 'text-accent-bronze' : 'text-accent-champagne')} />
         <span>{t(founder.titleKey)}</span>
       </p>
 

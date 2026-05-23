@@ -8,22 +8,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Dark navy profond (identité Novaxium)
         ink: {
-          950: '#05050A',
-          900: '#0A0A0F',
-          800: '#0F0F17',
-          700: '#15151F',
-          600: '#1C1C28',
-          500: '#262633'
+          950: '#05070D',
+          900: '#090C15',
+          800: '#0E121C',
+          700: '#141926',
+          600: '#1B2132',
+          500: '#232A3D'
         },
         accent: {
-          blue: '#3B82F6',
-          violet: '#8B5CF6',
+          // Or / champagne / bronze : accent signature de Novaxium
+          gold: '#C9A24C',
+          champagne: '#E4C77E',
+          bronze: '#9A7B30',
+          // Émeraude conservée pour les états fonctionnels (conforme, sécurité, en ligne)
           emerald: '#10B981',
+          // Rouge du drapeau marocain (souveraineté)
           rouge: '#C1272D'
         },
         bone: '#F5F5F7',
-        ash: '#A1A1AA'
+        ash: '#9A9AA6'
       },
       fontFamily: {
         display: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
@@ -72,9 +77,9 @@ const config: Config = {
         'grid-faint':
           'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
         'radial-glow':
-          'radial-gradient(ellipse at top, rgba(59,130,246,0.18), transparent 60%)',
+          'radial-gradient(ellipse at top, rgba(201,162,76,0.16), transparent 60%)',
         'aurora':
-          'conic-gradient(from 180deg at 50% 50%, #3B82F6 0deg, #8B5CF6 120deg, #10B981 240deg, #3B82F6 360deg)'
+          'conic-gradient(from 180deg at 50% 50%, #9A7B30 0deg, #C9A24C 120deg, #E4C77E 240deg, #9A7B30 360deg)'
       }
     }
   },

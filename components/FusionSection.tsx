@@ -33,7 +33,7 @@ export default function FusionSection() {
               title={
                 <span>
                   {t('fusion.title').split('.')[0]}.{' '}
-                  <span className="bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">
+                  <span className="text-accent-gold">
                     {t('fusion.title').split('.')[1]?.trim()}.
                   </span>
                 </span>
@@ -100,15 +100,15 @@ export default function FusionSection() {
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 -m-12 rounded-full bg-[radial-gradient(circle,rgba(16,185,129,0.35),transparent_60%)] blur-2xl" />
-                <div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-accent-blue/40 via-accent-violet/30 to-accent-emerald/40 backdrop-blur-xl sm:h-56 sm:w-56">
+                <div className="absolute inset-0 -m-12 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.35),transparent_60%)] blur-2xl" />
+                <div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-accent-gold/40 via-accent-bronze/30 to-accent-champagne/40 backdrop-blur-xl sm:h-56 sm:w-56">
                   <div className="absolute inset-3 rounded-full border border-white/10" />
                   <div className="text-center">
                     <Globe size={28} className="mx-auto text-bone" />
                     <div className="mt-2 font-display text-xl font-extrabold text-bone">{BRAND.name}</div>
                     <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-ash">fusion</div>
                   </div>
-                  <div className="absolute -inset-2 animate-spin-slow rounded-full border-t border-accent-blue/50" />
+                  <div className="absolute -inset-2 animate-spin-slow rounded-full border-t border-accent-gold/50" />
                 </div>
               </div>
             </motion.div>
@@ -133,9 +133,9 @@ export default function FusionSection() {
               />
               <defs>
                 <linearGradient id="fusion-grad" x1="0" x2="1">
-                  <stop offset="0" stopColor="#3B82F6" />
-                  <stop offset="0.5" stopColor="#10B981" />
-                  <stop offset="1" stopColor="#8B5CF6" />
+                  <stop offset="0" stopColor="#C9A24C" />
+                  <stop offset="0.5" stopColor="#E4C77E" />
+                  <stop offset="1" stopColor="#9A7B30" />
                 </linearGradient>
               </defs>
             </svg>
@@ -156,8 +156,8 @@ function CircleBubble({
   items: React.ReactNode[];
 }) {
   const colors = {
-    blue: 'from-accent-blue/40 to-accent-blue/5 border-accent-blue/40 shadow-[0_0_60px_-10px_rgba(59,130,246,0.5)]',
-    violet: 'from-accent-violet/40 to-accent-violet/5 border-accent-violet/40 shadow-[0_0_60px_-10px_rgba(139,92,246,0.5)]'
+    blue: 'from-accent-gold/40 to-accent-gold/5 border-accent-gold/40 shadow-[0_0_60px_-10px_rgba(201,162,76,0.5)]',
+    violet: 'from-accent-bronze/40 to-accent-bronze/5 border-accent-bronze/40 shadow-[0_0_60px_-10px_rgba(154,123,48,0.5)]'
   };
   return (
     <div className={`relative flex h-44 w-44 items-center justify-center rounded-full border bg-gradient-to-br backdrop-blur-md sm:h-56 sm:w-56 ${colors[tone]}`}>
@@ -186,9 +186,9 @@ function Pillar({
   tone: 'blue' | 'violet' | 'emerald';
 }) {
   const tones = {
-    blue: 'bg-accent-blue/15 text-accent-blue ring-accent-blue/30',
-    violet: 'bg-accent-violet/15 text-accent-violet ring-accent-violet/30',
-    emerald: 'bg-accent-emerald/15 text-accent-emerald ring-accent-emerald/30'
+    blue: 'bg-accent-gold/15 text-accent-gold ring-accent-gold/30',
+    violet: 'bg-accent-bronze/15 text-accent-bronze ring-accent-bronze/30',
+    emerald: 'bg-accent-champagne/15 text-accent-champagne ring-accent-champagne/30'
   };
   return (
     <motion.div

@@ -1,19 +1,12 @@
-<svg width="150" height="32" viewBox="0 0 150 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="nx-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3B82F6" />
-      <stop offset="1" stop-color="#8B5CF6" />
-    </linearGradient>
-  </defs>
-  <circle cx="16" cy="16" r="14.5" stroke="url(#nx-grad)" stroke-width="1.2" />
-  <path
-    d="M9 23 L9 9 L16 16 L23 9 L23 23"
-    stroke="url(#nx-grad)"
-    stroke-width="2.2"
-    stroke-linecap="square"
-    stroke-linejoin="miter"
-    fill="none"
-  />
-  <circle cx="16" cy="9" r="1.6" fill="#10B981" />
-  <text x="38" y="21" font-family="'Satoshi','Inter',system-ui,sans-serif" font-size="16" font-weight="800" letter-spacing="-0.04em" fill="#F5F5F7">Mizan</text>
+<svg width="190" height="40" viewBox="0 0 190 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="32" height="32" rx="8" fill="#0A0E18" />
+  <rect x="6" y="6" width="28" height="28" rx="6" fill="none" stroke="#C9A24C" stroke-width="1.3" />
+  <text x="9" y="14" font-family="'JetBrains Mono',monospace" font-size="5" fill="#C9A24C" fill-opacity="0.8">118</text>
+  <text x="31" y="14" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="5" fill="#9A9AA6">Nv</text>
+  <text x="20" y="28" text-anchor="middle" font-family="'Satoshi','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="-0.5">
+    <tspan fill="#F5F5F7">N</tspan><tspan fill="#C9A24C">X</tspan>
+  </text>
+  <text x="46" y="26" font-family="'Satoshi','Helvetica Neue',Arial,sans-serif" font-size="18" font-weight="800" letter-spacing="-0.6">
+    <tspan fill="#F5F5F7">NO</tspan><tspan fill="#C9A24C">VAX</tspan><tspan fill="#F5F5F7">IUM</tspan>
+  </text>
 </svg>

@@ -22,12 +22,12 @@ export default function CTASection() {
     <section id="contact" className="relative overflow-hidden py-32 sm:py-44">
       {/* Animated background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.18),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.18),transparent_60%)]" />
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:96px_96px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_60%)]" />
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 120, repeat: Infinity, ease: 'linear' }}
-          className="absolute left-1/2 top-1/2 -ml-[40vmin] -mt-[40vmin] h-[80vmin] w-[80vmin] rounded-full opacity-20 [background:conic-gradient(from_0deg,#3B82F6,#8B5CF6,#10B981,#3B82F6)] [mask:radial-gradient(circle,transparent_55%,black_56%,black_65%,transparent_66%)]"
+          className="absolute left-1/2 top-1/2 -ml-[40vmin] -mt-[40vmin] h-[80vmin] w-[80vmin] rounded-full opacity-20 [background:conic-gradient(from_0deg,#C9A24C,#9A7B30,#E4C77E,#C9A24C)] [mask:radial-gradient(circle,transparent_55%,black_56%,black_65%,transparent_66%)]"
         />
       </div>
 
@@ -40,7 +40,7 @@ export default function CTASection() {
           className="font-display text-[40px] font-extrabold leading-[0.98] tracking-ultra text-bone sm:text-[60px] md:text-[80px]"
         >
           {t('cta.title').split('?')[0]}
-          <span className="bg-gradient-to-r from-accent-blue via-accent-violet to-accent-emerald bg-clip-text text-transparent">
+          <span className="text-accent-gold">
             ?
           </span>
         </motion.h2>
@@ -97,7 +97,7 @@ export default function CTASection() {
             <button
               type="submit"
               disabled={state !== 'idle'}
-              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-blue via-accent-violet to-accent-emerald p-px transition-all hover:shadow-[0_0_60px_-10px_rgba(139,92,246,0.6)]"
+              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne p-px transition-all hover:shadow-[0_0_60px_-10px_rgba(154,123,48,0.6)]"
             >
               <span className="relative flex items-center justify-center gap-2 rounded-[14px] bg-ink-900 px-6 py-4 text-sm font-semibold text-bone transition-colors group-hover:bg-ink-800">
                 {state === 'idle' && (
@@ -156,7 +156,7 @@ function Input({
   autoComplete?: string;
 }) {
   return (
-    <label className="group relative flex flex-col gap-1 rounded-2xl border border-white/10 bg-ink-800/50 px-4 py-3 text-left transition-colors focus-within:border-accent-blue/60 focus-within:bg-ink-800/80">
+    <label className="group relative flex flex-col gap-1 rounded-2xl border border-white/10 bg-ink-800/50 px-4 py-3 text-left transition-colors focus-within:border-accent-gold/60 focus-within:bg-ink-800/80">
       <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-ash">
         {label}
         {required && <span className="text-accent-rouge"> *</span>}

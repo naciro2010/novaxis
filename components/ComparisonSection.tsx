@@ -28,7 +28,7 @@ export default function ComparisonSection() {
           title={
             <span>
               {t('why.title').split('.')[0]}.{' '}
-              <span className="bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 Sans détour.
               </span>
             </span>

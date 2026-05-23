@@ -586,7 +586,7 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('fr');
 
   useEffect(() => {
-    const saved = typeof window !== 'undefined' ? (localStorage.getItem('mizan_locale') as Locale | null) : null;
+    const saved = typeof window !== 'undefined' ? (localStorage.getItem('novaxium_locale') as Locale | null) : null;
     if (saved && ['fr', 'en', 'ar'].includes(saved)) setLocaleState(saved);
   }, []);
 
@@ -598,7 +598,7 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);
-    try { localStorage.setItem('mizan_locale', l); } catch {}
+    try { localStorage.setItem('novaxium_locale', l); } catch {}
   }, []);
 
   const t = useCallback(

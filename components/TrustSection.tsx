@@ -18,7 +18,7 @@ export default function TrustSection() {
           title={
             <span>
               {t('trust.title').split('.')[0]}.{' '}
-              <span className="bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 Avec preuves.
               </span>
             </span>
@@ -52,7 +52,7 @@ export default function TrustSection() {
             “{t('trust.quote')}”
           </blockquote>
           <figcaption className="mt-8 flex items-center gap-4">
-            <span className="block h-12 w-12 rounded-full bg-gradient-to-br from-accent-blue to-accent-violet" />
+            <span className="block h-12 w-12 rounded-full bg-gradient-to-br from-accent-gold to-accent-bronze" />
             <div>
               <div className="font-display text-sm font-bold text-bone">{t('trust.quote.author')}</div>
               <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-ash">Rabat · 2026</div>

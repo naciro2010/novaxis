@@ -5,12 +5,13 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400&display=swap');
 
 :root {
-  --bg: #0A0A0F;
-  --bg-deep: #05050A;
+  --bg: #090C15;
+  --bg-deep: #05070D;
   --bone: #F5F5F7;
-  --ash: #A1A1AA;
-  --blue: #3B82F6;
-  --violet: #8B5CF6;
+  --ash: #9A9AA6;
+  --gold: #C9A24C;
+  --champagne: #E4C77E;
+  --bronze: #9A7B30;
   --emerald: #10B981;
   --rouge: #C1272D;
 }
@@ -40,7 +41,7 @@ html.lenis, html.lenis body {
 }
 
 ::selection {
-  background: rgba(59,130,246,0.35);
+  background: rgba(201,162,76,0.32);
   color: #fff;
 }
 
@@ -65,14 +66,14 @@ body {
 }
 
 /* Glow utilities */
-.glow-blue {
+.glow-gold {
   box-shadow:
-    0 0 0 1px rgba(59,130,246,0.4),
-    0 0 28px -4px rgba(59,130,246,0.6),
-    inset 0 0 24px -8px rgba(139,92,246,0.5);
+    0 0 0 1px rgba(201,162,76,0.4),
+    0 0 28px -4px rgba(201,162,76,0.55),
+    inset 0 0 24px -8px rgba(228,199,126,0.45);
 }
 .text-glow {
-  text-shadow: 0 0 24px rgba(59,130,246,0.45);
+  text-shadow: 0 0 24px rgba(201,162,76,0.4);
 }
 
 /* Subtle film grain */

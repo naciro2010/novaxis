@@ -19,7 +19,7 @@ export default function SecuritySection() {
 
   return (
     <section id="security" className="relative overflow-hidden py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(201,162,76,0.08),transparent_60%)]" />
 
       <div className="mx-auto max-w-7xl px-5">
         <div className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:items-center">
@@ -29,7 +29,7 @@ export default function SecuritySection() {
               title={
                 <span>
                   {t('security.title').split('.')[0]}.{' '}
-                  <span className="bg-gradient-to-r from-accent-emerald to-accent-blue bg-clip-text text-transparent">
+                  <span className="text-accent-gold">
                     {t('security.title').split('.')[1]?.trim() || ''}.
                   </span>
                 </span>
@@ -69,7 +69,7 @@ export default function SecuritySection() {
 function ShieldArt() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-md">
-      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.25),transparent_60%)] blur-2xl" />
+      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.25),transparent_60%)] blur-2xl" />
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
@@ -91,12 +91,12 @@ function ShieldArt() {
           <svg width="240" height="280" viewBox="0 0 240 280" fill="none">
             <defs>
               <linearGradient id="shield-fill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#3B82F6" stopOpacity="0.35" />
-                <stop offset="1" stopColor="#10B981" stopOpacity="0.15" />
+                <stop offset="0" stopColor="#C9A24C" stopOpacity="0.35" />
+                <stop offset="1" stopColor="#E4C77E" stopOpacity="0.15" />
               </linearGradient>
               <linearGradient id="shield-edge" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#8B5CF6" />
-                <stop offset="1" stopColor="#10B981" />
+                <stop offset="0" stopColor="#9A7B30" />
+                <stop offset="1" stopColor="#E4C77E" />
               </linearGradient>
             </defs>
             <path

@@ -25,7 +25,7 @@ export default function SectionHeader({
           'inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-ash'
         )}
       >
-        <span className="h-1 w-1 rounded-full bg-accent-emerald" />
+        <span className="h-1 w-1 rounded-full bg-accent-gold" />
         {eyebrow}
       </motion.div>
       <motion.h2

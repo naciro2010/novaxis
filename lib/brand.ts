@@ -1,9 +1,12 @@
 // Source unique de vérité pour l'identité de marque.
 // Un renommage futur ne touche que ce fichier (le reste lit BRAND ou le token {brand}).
 export const BRAND = {
-  name: 'Mizan',
-  nameArabic: 'ميزان',
-  legal: 'Mizan SARL',
+  name: 'Novaxium',
+  // Identité « élément » : Novaxium est traité comme l'élément 118, symbole Nv.
+  atomicNumber: 118,
+  symbol: 'Nv',
+  monogram: 'NX',
+  legal: 'Novaxium SARL',
   // Domaine et contacts : conservés tant que la migration DNS n'est pas faite.
   domain: 'novaxis.ma',
   url: 'https://novaxis.ma',

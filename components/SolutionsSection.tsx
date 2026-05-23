@@ -196,7 +196,7 @@ export default function SolutionsSection() {
           title={
             <span>
               {t('solutions.title').split('.')[0]}.{' '}
-              <span className="bg-gradient-to-r from-accent-blue to-accent-violet bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 {t('solutions.title').split('.')[1]?.trim() || ''}
               </span>
             </span>
@@ -205,8 +205,8 @@ export default function SolutionsSection() {
 
         {/* Flagship */}
         <div className="relative mt-16 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-sm hairline">
-          <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-accent-blue/20 blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-accent-violet/15 blur-3xl" />
+          <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-accent-gold/20 blur-3xl" />
+          <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-accent-bronze/15 blur-3xl" />
 
           <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div>
@@ -254,12 +254,12 @@ export default function SolutionsSection() {
                 }}
                 onDragOver={(e) => {
                   e.preventDefault();
-                  dragRef.current?.classList.add('border-accent-blue/60');
+                  dragRef.current?.classList.add('border-accent-gold/60');
                 }}
-                onDragLeave={() => dragRef.current?.classList.remove('border-accent-blue/60')}
+                onDragLeave={() => dragRef.current?.classList.remove('border-accent-gold/60')}
                 onDrop={(e) => {
                   e.preventDefault();
-                  dragRef.current?.classList.remove('border-accent-blue/60');
+                  dragRef.current?.classList.remove('border-accent-gold/60');
                   onFiles(e.dataTransfer.files);
                 }}
                 className={cn(
@@ -284,7 +284,7 @@ export default function SolutionsSection() {
                   {state === 'idle' ? (
                     <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-ash/60">ready</span>
                   ) : state === 'running' ? (
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-accent-blue">
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-accent-gold">
                       <Loader2 size={11} className="animate-spin" />
                       {t(stageKey(progress))}
                     </span>
@@ -306,7 +306,7 @@ export default function SolutionsSection() {
                   <motion.div
                     animate={{ width: `${state === 'idle' ? 0 : progress}%` }}
                     transition={{ duration: 0.2 }}
-                    className="h-full bg-gradient-to-r from-accent-blue via-accent-violet to-accent-emerald"
+                    className="h-full bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne"
                   />
                 </div>
 
@@ -320,7 +320,7 @@ export default function SolutionsSection() {
                       exit={{ opacity: 0 }}
                       className="mt-4 flex items-center gap-2 rounded-xl border border-dashed border-white/10 px-3 py-3 text-xs text-ash/70"
                     >
-                      <ScanText size={14} className="text-accent-blue" />
+                      <ScanText size={14} className="text-accent-gold" />
                       {t('solutions.demo.hint')}
                     </motion.div>
                   ) : (
@@ -336,10 +336,10 @@ export default function SolutionsSection() {
                           <motion.div
                             initial={{ opacity: 0, y: 4 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="flex items-center justify-between rounded-xl border border-accent-blue/25 bg-accent-blue/[0.06] px-3 py-2.5"
+                            className="flex items-center justify-between rounded-xl border border-accent-gold/25 bg-accent-gold/[0.06] px-3 py-2.5"
                           >
                             <div className="flex items-center gap-2">
-                              <ScanText size={15} className="text-accent-blue" />
+                              <ScanText size={15} className="text-accent-gold" />
                               <div>
                                 <div className="font-mono text-[9px] uppercase tracking-[0.22em] text-ash/70">
                                   {t('solutions.demo.detected')}
@@ -444,7 +444,7 @@ export default function SolutionsSection() {
               whileHover={{ y: -4 }}
               className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition-colors hover:border-white/20 hover:bg-white/[0.04]"
             >
-              <FileSearch size={20} className="text-accent-blue" />
+              <FileSearch size={20} className="text-accent-gold" />
               <h4 className="mt-4 font-display text-lg font-bold text-bone">{c.t}</h4>
               <p className="mt-2 text-sm text-ash">{c.d}</p>
               <ArrowUpRight size={16} className="absolute right-5 top-5 text-ash transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-bone" />

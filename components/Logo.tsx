@@ -3,29 +3,30 @@ import { BRAND } from '@/lib/brand';
 
 export default function Logo({ className }: { className?: string }) {
   return (
-    <a href="#top" className={cn('group inline-flex items-center gap-2.5', className)} aria-label={`${BRAND.name} — accueil`}>
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
-        <defs>
-          <linearGradient id="nx-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="#3B82F6" />
-            <stop offset="1" stopColor="#8B5CF6" />
-          </linearGradient>
-        </defs>
-        <circle cx="16" cy="16" r="14.5" stroke="url(#nx-grad)" strokeWidth="1.2" />
-        {/* Monogramme M (Mizan) — les deux montants évoquent les fléaux d'une balance */}
-        <path
-          d="M9 23 L9 9 L16 16 L23 9 L23 23"
-          stroke="url(#nx-grad)"
-          strokeWidth="2.2"
-          strokeLinecap="square"
-          strokeLinejoin="miter"
-          fill="none"
-        />
-        {/* Pivot vert (le point d'équilibre du mizan) */}
-        <circle cx="16" cy="9" r="1.7" fill="#10B981" className="transition-all duration-300 group-hover:r-2" />
-      </svg>
-      <span className="font-display text-[17px] font-extrabold tracking-tightest text-bone">
-        {BRAND.name}
+    <a
+      href="#top"
+      className={cn('group inline-flex items-center gap-3', className)}
+      aria-label={`${BRAND.name} — accueil`}
+    >
+      {/* Tuile « élément » : 118 / Nv / NX (identité Novaxium) */}
+      <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[9px] border border-accent-gold/45 bg-ink-800/70 transition-colors duration-300 group-hover:border-accent-gold/80">
+        <span className="absolute left-1.5 top-1 font-mono text-[6px] font-medium leading-none text-accent-gold/75">
+          {BRAND.atomicNumber}
+        </span>
+        <span className="absolute right-1.5 top-1 font-mono text-[6px] font-medium leading-none text-ash">
+          {BRAND.symbol}
+        </span>
+        <span className="font-display text-[15px] font-extrabold leading-none tracking-tightest">
+          <span className="text-bone">N</span>
+          <span className="text-accent-gold">X</span>
+        </span>
+        <span className="absolute inset-x-2 bottom-1 h-px bg-accent-gold/25" />
+      </span>
+      {/* Wordmark NO·VAX·IUM */}
+      <span className="font-display text-[17px] font-extrabold tracking-tightest leading-none">
+        <span className="text-bone">NO</span>
+        <span className="text-accent-gold">VAX</span>
+        <span className="text-bone">IUM</span>
       </span>
     </a>
   );

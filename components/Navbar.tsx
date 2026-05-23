@@ -40,7 +40,7 @@ export default function Navbar() {
           className={cn(
             'flex w-full items-center justify-between rounded-full border border-white/5 px-4 py-2.5 transition-all duration-300',
             scrolled
-              ? 'bg-ink-900/70 backdrop-blur-xl shadow-[0_10px_40px_-20px_rgba(59,130,246,0.4)]'
+              ? 'bg-ink-900/70 backdrop-blur-xl shadow-[0_10px_40px_-20px_rgba(201,162,76,0.4)]'
               : 'bg-transparent'
           )}
         >
@@ -79,7 +79,7 @@ export default function Navbar() {
 
             <a
               href="#contact"
-              className="group relative hidden overflow-hidden rounded-full border border-accent-blue/40 bg-gradient-to-r from-accent-blue/20 to-accent-violet/20 px-4 py-2 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-accent-blue/80 hover:from-accent-blue/30 hover:to-accent-violet/30 md:inline-flex"
+              className="group relative hidden overflow-hidden rounded-full border border-accent-gold/40 bg-gradient-to-r from-accent-gold/20 to-accent-bronze/20 px-4 py-2 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-accent-gold/80 hover:from-accent-gold/30 hover:to-accent-bronze/30 md:inline-flex"
             >
               <span className="relative z-10">{t('nav.cta')}</span>
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
@@ -128,7 +128,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="rounded-full border border-accent-blue/40 bg-accent-blue/20 px-4 py-2 text-sm font-medium text-bone"
+                className="rounded-full border border-accent-gold/40 bg-accent-gold/20 px-4 py-2 text-sm font-medium text-bone"
               >
                 {t('nav.cta')}
               </a>

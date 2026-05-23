@@ -35,7 +35,7 @@ export default function Hero() {
           ou les degrades (couches transparentes) ne sont pas encore peints. */}
       <div className="absolute inset-0 -z-20 bg-ink-900" />
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.18),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(139,92,246,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(201,162,76,0.18),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(154,123,48,0.12),transparent_55%)]" />
       <div className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.6)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
       {/* 3D scene */}
@@ -69,7 +69,7 @@ export default function Hero() {
                 <RotatingWord word={word} />
                 <span aria-hidden className="text-ash">]</span>
               </span>
-              <span className="ml-[0.2em] bg-gradient-to-r from-accent-blue via-accent-violet to-accent-emerald bg-clip-text text-transparent">
+              <span className="ml-[0.2em] bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne bg-clip-text text-transparent">
                 {t('hero.title.suffix')}
               </span>
             </span>
@@ -137,7 +137,7 @@ function RotatingWord({ word }: { word: string }) {
         animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         exit={{ y: '-110%', opacity: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="inline-block bg-gradient-to-r from-accent-blue via-accent-violet to-accent-emerald bg-clip-text text-transparent"
+        className="inline-block bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne bg-clip-text text-transparent"
       >
         {word}
       </motion.span>

@@ -36,7 +36,7 @@ export default function PartnersSection() {
           title={
             <span>
               {t('partners.title').split('.')[0]}.{' '}
-              <span className="bg-gradient-to-r from-accent-emerald to-accent-blue bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 {t('partners.title').split('.')[1]?.trim()}
               </span>
             </span>
@@ -65,7 +65,7 @@ export default function PartnersSection() {
               whileHover={{ y: -3 }}
               className="group relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-b from-white/[0.04] to-transparent p-5 transition-colors hover:border-white/20"
             >
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent-blue/0 via-transparent to-accent-violet/0 opacity-0 transition-opacity group-hover:opacity-100" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(59,130,246,0.15), transparent 60%)' }} />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent-gold/0 via-transparent to-accent-bronze/0 opacity-0 transition-opacity group-hover:opacity-100" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(201,162,76,0.15), transparent 60%)' }} />
 
               <div className="flex items-start justify-between">
                 <PartnerLogo name={p.name} />
@@ -77,7 +77,7 @@ export default function PartnersSection() {
                 <div className="mt-1 text-[12px] text-ash">{p.tag}</div>
               </div>
 
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent-blue/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent-gold/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>
@@ -88,12 +88,12 @@ export default function PartnersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative mt-12 overflow-hidden rounded-3xl border border-accent-emerald/20 bg-gradient-to-br from-accent-emerald/10 via-accent-blue/5 to-transparent p-8 sm:p-10"
+          className="relative mt-12 overflow-hidden rounded-3xl border border-accent-champagne/20 bg-gradient-to-br from-accent-gold/10 via-accent-gold/5 to-transparent p-8 sm:p-10"
         >
-          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-accent-emerald/15 blur-3xl" />
+          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-accent-champagne/15 blur-3xl" />
           <div className="relative grid gap-6 sm:grid-cols-[auto_1fr] sm:items-center">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-emerald/15 ring-1 ring-accent-emerald/30">
-              <Sparkles className="text-accent-emerald" size={22} />
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-champagne/15 ring-1 ring-accent-champagne/30">
+              <Sparkles className="text-accent-champagne" size={22} />
             </div>
             <div>
               <h3 className="font-display text-xl font-bold text-bone sm:text-2xl">

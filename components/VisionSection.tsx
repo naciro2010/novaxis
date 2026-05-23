@@ -9,7 +9,7 @@ export default function VisionSection() {
 
   return (
     <section className="relative overflow-hidden py-32 sm:py-44">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.12),transparent_50%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(154,123,48,0.12),transparent_50%)]" />
 
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeader
@@ -17,7 +17,7 @@ export default function VisionSection() {
           title={
             <span>
               Manifeste.{' '}
-              <span className="bg-gradient-to-r from-accent-emerald to-accent-blue bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 Pas une stratégie marketing.
               </span>
             </span>
@@ -27,7 +27,7 @@ export default function VisionSection() {
         <div className="mt-16 space-y-12">
           <Line index={1}>
             <span className="text-bone">{t('vision.l1')}</span>{' '}
-            <span className="bg-gradient-to-r from-accent-blue via-accent-violet to-accent-emerald bg-clip-text text-transparent">
+            <span className="text-accent-gold">
               {t('vision.l1.b')}
             </span>
           </Line>

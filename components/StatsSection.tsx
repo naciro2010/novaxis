@@ -10,7 +10,7 @@ export default function StatsSection() {
 
   return (
     <section className="relative overflow-hidden py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.12),transparent_60%),radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.10),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_80%,rgba(201,162,76,0.12),transparent_60%),radial-gradient(circle_at_80%_20%,rgba(201,162,76,0.10),transparent_55%)]" />
 
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
@@ -18,7 +18,7 @@ export default function StatsSection() {
           title={
             <span>
               {t('stats.title').split('.')[0]}.{' '}
-              <span className="bg-gradient-to-r from-accent-emerald to-accent-blue bg-clip-text text-transparent">
+              <span className="text-accent-gold">
                 {t('stats.title').split('.')[1]?.trim() || ''}.
               </span>
             </span>
@@ -52,9 +52,9 @@ function StatCard({
   tone: 'blue' | 'violet' | 'emerald' | 'rouge';
 }) {
   const tones = {
-    blue: 'text-accent-blue',
-    violet: 'text-accent-violet',
-    emerald: 'text-accent-emerald',
+    blue: 'text-accent-gold',
+    violet: 'text-accent-bronze',
+    emerald: 'text-accent-champagne',
     rouge: 'text-accent-rouge'
   };
   return (
