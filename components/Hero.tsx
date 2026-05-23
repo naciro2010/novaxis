@@ -92,14 +92,14 @@ export default function Hero() {
           >
             <a
               href="#solutions"
-              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-bone px-6 py-3.5 text-sm font-semibold text-ink-900 transition-all hover:shadow-[0_0_40px_-8px_rgba(245,245,247,0.6)]"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-bone px-6 py-3.5 text-sm font-semibold text-ink-900 transition-all hover:shadow-[0_0_40px_-8px_rgba(245,245,247,0.6)] active:scale-[0.98]"
             >
               <span className="relative z-10">{t('hero.cta.primary')}</span>
               <ArrowRight size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#solutions"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/[0.06]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/[0.06] active:scale-[0.98]"
             >
               <Play size={14} className="text-accent-emerald" />
               <span>{t('hero.cta.secondary')}</span>

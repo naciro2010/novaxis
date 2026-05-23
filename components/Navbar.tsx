@@ -79,7 +79,7 @@ export default function Navbar() {
 
             <a
               href="#contact"
-              className="group relative hidden overflow-hidden rounded-full border border-accent-gold/40 bg-gradient-to-r from-accent-gold/20 to-accent-bronze/20 px-4 py-2 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-accent-gold/80 hover:from-accent-gold/30 hover:to-accent-bronze/30 md:inline-flex"
+              className="group relative hidden overflow-hidden rounded-full border border-accent-gold/40 bg-gradient-to-r from-accent-gold/20 to-accent-bronze/20 px-4 py-2 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-accent-gold/80 hover:from-accent-gold/30 hover:to-accent-bronze/30 active:scale-[0.97] md:inline-flex"
             >
               <span className="relative z-10">{t('nav.cta')}</span>
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />

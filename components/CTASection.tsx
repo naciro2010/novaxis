@@ -97,7 +97,7 @@ export default function CTASection() {
             <button
               type="submit"
               disabled={state !== 'idle'}
-              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne p-px transition-all hover:shadow-[0_0_60px_-10px_rgba(154,123,48,0.6)]"
+              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne p-px transition-all hover:shadow-[0_0_60px_-10px_rgba(154,123,48,0.6)] active:scale-[0.99] disabled:opacity-60 disabled:active:scale-100"
             >
               <span className="relative flex items-center justify-center gap-2 rounded-[14px] bg-ink-900 px-6 py-4 text-sm font-semibold text-bone transition-colors group-hover:bg-ink-800">
                 {state === 'idle' && (
