@@ -71,9 +71,12 @@ export default function DecryptText({
     return () => cancelAnimationFrame(rafRef.current);
   }, [text, delay, speed, scramble, trigger]);
 
+  // Un calque invisible réserve la largeur finale ; le texte brouillé est
+  // superposé en absolu → aucun décalage de mise en page pendant l'animation.
   return (
-    <As className={cn('decrypt', className)} aria-label={text}>
-      {out}
+    <As className={cn('decrypt relative', className)} aria-label={text}>
+      <span aria-hidden className="invisible">{text}</span>
+      <span aria-hidden className="absolute inset-0">{out}</span>
     </As>
   );
 }

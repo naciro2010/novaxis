@@ -43,16 +43,30 @@ export default function Preloader() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = visible ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
+    const getLenis = () =>
+      (window as Window & { __lenis?: { stop(): void; start(): void } }).__lenis;
+    if (visible) {
+      document.body.style.overflow = 'hidden';
+      window.scrollTo(0, 0);
+      // Lenis est monté juste après : on le gèle à la frame suivante.
+      const id = requestAnimationFrame(() => getLenis()?.stop());
+      return () => {
+        cancelAnimationFrame(id);
+        document.body.style.overflow = '';
+        getLenis()?.start();
+      };
+    }
+    document.body.style.overflow = '';
+    getLenis()?.start();
   }, [visible]);
 
   if (!visible) return null;
 
   return (
     <div
+      role="status"
+      aria-live="polite"
+      aria-label="Chargement"
       className={cn(
         'fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ink-950 transition-opacity duration-500',
         hiding && 'pointer-events-none opacity-0'
