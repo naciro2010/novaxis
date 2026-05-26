@@ -4,6 +4,7 @@ import './globals.css';
 import { LocaleProvider } from '@/lib/i18n';
 import { BRAND } from '@/lib/brand';
 import SmoothScroll from '@/components/SmoothScroll';
+import SiteBackground from '@/components/SiteBackground';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -62,8 +63,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="bg-ink-900 text-bone antialiased">
+      <body className="bg-ink-950 text-bone antialiased">
         <LocaleProvider>
+          <SiteBackground />
           <SmoothScroll>
             {children}
           </SmoothScroll>

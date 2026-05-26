@@ -1,13 +1,10 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 import DecryptText from './DecryptText';
 import { ArrowRight, Play, MapPin } from 'lucide-react';
-
-const NetworkScene = dynamic(() => import('./NetworkScene'), { ssr: false });
 
 const ROTATING = {
   fr: ['finance', 'comptabilité', 'conformité'],
@@ -29,19 +26,11 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink-900 pt-28"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28"
     >
-      {/* Base sombre opaque garantie : evite tout flash blanc si la scene 3D
-          ou les degrades (couches transparentes) ne sont pas encore peints. */}
-      <div className="absolute inset-0 -z-20 bg-ink-900" />
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(201,162,76,0.18),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(154,123,48,0.12),transparent_55%)]" />
-      <div className="absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.6)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.6)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-
-      {/* 3D scene */}
-      <div className="absolute inset-0 -z-10">
-        <NetworkScene />
-      </div>
+      {/* Le réseau neuronal global (SiteBackground) sert de fond. On garde
+          seulement un léger dégradé bas pour amorcer la transition de section. */}
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-ink-950/80" />
 
       <div className="mx-auto w-full max-w-7xl px-5">
         <div className="max-w-4xl">
@@ -92,7 +81,7 @@ export default function Hero() {
           >
             <a
               href="#solutions"
-              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-bone px-6 py-3.5 text-sm font-semibold text-ink-900 transition-all hover:shadow-[0_0_40px_-8px_rgba(245,245,247,0.6)] active:scale-[0.98]"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-bone px-6 py-3.5 text-sm font-semibold text-ink-900 transition-all hover:shadow-[0_8px_30px_-12px_rgba(245,245,247,0.4)] active:scale-[0.98]"
             >
               <span className="relative z-10">{t('hero.cta.primary')}</span>
               <ArrowRight size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />

@@ -9,9 +9,7 @@ export default function StatsSection() {
   const { t } = useI18n();
 
   return (
-    <section className="relative overflow-hidden py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_80%,rgba(201,162,76,0.12),transparent_60%),radial-gradient(circle_at_80%_20%,rgba(201,162,76,0.10),transparent_55%)]" />
-
+    <section className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
           eyebrow={t('stats.eyebrow')}

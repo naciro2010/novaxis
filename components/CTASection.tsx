@@ -20,16 +20,8 @@ export default function CTASection() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-32 sm:py-44">
-      {/* Animated background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.18),transparent_60%)]" />
-        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:96px_96px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_60%)]" />
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 120, repeat: Infinity, ease: 'linear' }}
-          className="absolute left-1/2 top-1/2 -ml-[40vmin] -mt-[40vmin] h-[80vmin] w-[80vmin] rounded-full opacity-20 [background:conic-gradient(from_0deg,#C9A24C,#9A7B30,#E4C77E,#C9A24C)] [mask:radial-gradient(circle,transparent_55%,black_56%,black_65%,transparent_66%)]"
-        />
-      </div>
+      {/* Voile focal discret par-dessus le réseau neuronal global. */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.10),transparent_62%)]" />
 
       <div className="mx-auto max-w-5xl px-5 text-center">
         <motion.h2
@@ -97,7 +89,7 @@ export default function CTASection() {
             <button
               type="submit"
               disabled={state !== 'idle'}
-              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne p-px transition-all hover:shadow-[0_0_60px_-10px_rgba(154,123,48,0.6)] active:scale-[0.99] disabled:opacity-60 disabled:active:scale-100"
+              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold to-accent-bronze p-px transition-all hover:shadow-[0_8px_34px_-14px_rgba(201,162,76,0.5)] active:scale-[0.99] disabled:opacity-60 disabled:active:scale-100"
             >
               <span className="relative flex items-center justify-center gap-2 rounded-[14px] bg-ink-900 px-6 py-4 text-sm font-semibold text-bone transition-colors group-hover:bg-ink-800">
                 {state === 'idle' && (

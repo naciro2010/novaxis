@@ -6,3 +6,4 @@ out
 *.log
 .vercel
 .turbo
+*.tsbuildinfo
