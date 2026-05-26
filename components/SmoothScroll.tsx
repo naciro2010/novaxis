@@ -11,6 +11,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       smoothWheel: true,
       touchMultiplier: 1.2
     });
+    // Exposé pour que le preloader puisse geler le scroll pendant le chargement.
+    (window as Window & { __lenis?: Lenis }).__lenis = lenis;
 
     let rafId = 0;
     function raf(time: number) {
@@ -22,6 +24,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      delete (window as Window & { __lenis?: Lenis }).__lenis;
     };
   }, []);
 
