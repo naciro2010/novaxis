@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 
 export default function Page() {
   return (
-    <main className="relative overflow-x-clip">
+    <main className="relative z-10 overflow-x-clip">
       <Navbar />
       <Hero />
       <FusionSection />

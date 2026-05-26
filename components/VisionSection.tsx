@@ -8,9 +8,7 @@ export default function VisionSection() {
   const { t } = useI18n();
 
   return (
-    <section className="relative overflow-hidden py-32 sm:py-44">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(154,123,48,0.12),transparent_50%)]" />
-
+    <section className="relative py-32 sm:py-44">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeader
           eyebrow={t('vision.eyebrow')}

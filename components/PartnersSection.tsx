@@ -28,8 +28,6 @@ export default function PartnersSection() {
 
   return (
     <section id="partners" className="relative py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 [background-image:radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)] opacity-50" />
-
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
           eyebrow={t('partners.eyebrow')}
@@ -63,10 +61,8 @@ export default function PartnersSection() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               whileHover={{ y: -3 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-b from-white/[0.04] to-transparent p-5 transition-colors hover:border-white/20"
+              className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02] p-5 transition-colors hover:border-white/20 hover:bg-white/[0.04]"
             >
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-accent-gold/0 via-transparent to-accent-bronze/0 opacity-0 transition-opacity group-hover:opacity-100" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(201,162,76,0.15), transparent 60%)' }} />
-
               <div className="flex items-start justify-between">
                 <PartnerLogo name={p.name} />
                 {p.flag && <span className="text-[10px] opacity-60">{p.flag}</span>}
@@ -88,9 +84,8 @@ export default function PartnersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative mt-12 overflow-hidden rounded-3xl border border-accent-champagne/20 bg-gradient-to-br from-accent-gold/10 via-accent-gold/5 to-transparent p-8 sm:p-10"
+          className="relative mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-8 sm:p-10"
         >
-          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-accent-champagne/15 blur-3xl" />
           <div className="relative grid gap-6 sm:grid-cols-[auto_1fr] sm:items-center">
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-champagne/15 ring-1 ring-accent-champagne/30">
               <Sparkles className="text-accent-champagne" size={22} />

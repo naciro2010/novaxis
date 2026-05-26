@@ -19,8 +19,6 @@ export default function SecuritySection() {
 
   return (
     <section id="security" className="relative overflow-hidden py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_70%_50%,rgba(201,162,76,0.08),transparent_60%)]" />
-
       <div className="mx-auto max-w-7xl px-5">
         <div className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
@@ -69,7 +67,7 @@ export default function SecuritySection() {
 function ShieldArt() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-md">
-      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.25),transparent_60%)] blur-2xl" />
+      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.12),transparent_60%)] blur-2xl" />
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}

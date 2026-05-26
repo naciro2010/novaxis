@@ -58,8 +58,6 @@ export default function TeamSection() {
 
   return (
     <section className="relative py-32 sm:py-40">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(154,123,48,0.08),transparent_55%)]" />
-
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
           eyebrow={t('team.eyebrow')}
@@ -140,10 +138,8 @@ function FounderCard({ founder, index }: { founder: Founder; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-sm sm:p-8 hairline"
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-sm sm:p-8 hairline"
     >
-      <div className={cn('absolute -right-24 -top-24 h-56 w-56 rounded-full blur-3xl bg-gradient-to-br', grad)} />
-
       {/* Founder ribbon */}
       <div className="absolute end-5 top-5 inline-flex items-center gap-1.5 rounded-full border border-accent-rouge/40 bg-accent-rouge/10 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.24em] text-accent-rouge">
         <BadgeCheck size={11} />

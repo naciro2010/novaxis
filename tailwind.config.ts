@@ -41,45 +41,13 @@ const config: Config = {
       },
       animation: {
         'spin-slow': 'spin 18s linear infinite',
-        float: 'float 8s ease-in-out infinite',
-        grain: 'grain 8s steps(10) infinite',
-        shimmer: 'shimmer 2.4s linear infinite',
-        marquee: 'marquee 40s linear infinite',
-        'pulse-glow': 'pulseGlow 3s ease-in-out infinite'
+        marquee: 'marquee 40s linear infinite'
       },
       keyframes: {
-        float: {
-          '0%,100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' }
-        },
-        grain: {
-          '0%,100%': { transform: 'translate(0,0)' },
-          '10%': { transform: 'translate(-5%,-5%)' },
-          '30%': { transform: 'translate(3%,-10%)' },
-          '50%': { transform: 'translate(-10%,5%)' },
-          '70%': { transform: 'translate(5%,10%)' },
-          '90%': { transform: 'translate(-5%,-2%)' }
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' }
-        },
         marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' }
-        },
-        pulseGlow: {
-          '0%,100%': { opacity: '0.4' },
-          '50%': { opacity: '1' }
         }
-      },
-      backgroundImage: {
-        'grid-faint':
-          'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-        'radial-glow':
-          'radial-gradient(ellipse at top, rgba(201,162,76,0.16), transparent 60%)',
-        'aurora':
-          'conic-gradient(from 180deg at 50% 50%, #9A7B30 0deg, #C9A24C 120deg, #E4C77E 240deg, #9A7B30 360deg)'
       }
     }
   },

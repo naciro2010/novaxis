@@ -7,7 +7,7 @@ L'axe nouveau de la finance augmentée. Comptabilité × Intelligence — Souver
 - Next.js 14 (App Router) + TypeScript
 - Tailwind CSS — palette dark néo-futurisme
 - Framer Motion — animations et transitions
-- React Three Fiber + Three.js — réseau 3D du hero
+- React Three Fiber + Three.js — réseau de neurones (fond global)
 - Lenis — smooth scroll
 - Lucide — icônes
 - i18n custom — FR / EN / AR (RTL)
@@ -36,8 +36,10 @@ app/
   page.tsx          # Assemblage des sections
   globals.css
 components/
+  SiteBackground.tsx     # monte le réseau de neurones en fond fixe global
+  NeuralScene.tsx        # réseau de neurones R3F (nœuds + synapses + impulsions)
   Navbar.tsx
-  Hero.tsx          # + NetworkScene.tsx (R3F)
+  Hero.tsx
   FusionSection.tsx
   VisionSection.tsx
   SolutionsSection.tsx   # + démo OCR live
@@ -64,5 +66,5 @@ lib/
 
 - **Palette** : `tailwind.config.ts` → `theme.extend.colors`
 - **Textes** : `lib/i18n.tsx`
-- **3D hero** : `components/NetworkScene.tsx` (nombre de nœuds, distances, couleurs)
+- **Réseau de neurones** : `components/NeuralScene.tsx` (nombre de nœuds, distance des synapses, impulsions, couleurs)
 - **Stack partenaires** : `components/PartnersSection.tsx` → tableau `PARTNERS`

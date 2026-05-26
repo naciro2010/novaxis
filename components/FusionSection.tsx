@@ -100,8 +100,8 @@ export default function FusionSection() {
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 -m-12 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.35),transparent_60%)] blur-2xl" />
-                <div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-accent-gold/40 via-accent-bronze/30 to-accent-champagne/40 backdrop-blur-xl sm:h-56 sm:w-56">
+                <div className="absolute inset-0 -m-10 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.16),transparent_60%)] blur-2xl" />
+                <div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-white/15 bg-gradient-to-br from-accent-gold/25 to-accent-bronze/15 backdrop-blur-xl sm:h-56 sm:w-56">
                   <div className="absolute inset-3 rounded-full border border-white/10" />
                   <div className="text-center">
                     <Globe size={28} className="mx-auto text-bone" />
@@ -156,8 +156,8 @@ function CircleBubble({
   items: React.ReactNode[];
 }) {
   const colors = {
-    blue: 'from-accent-gold/40 to-accent-gold/5 border-accent-gold/40 shadow-[0_0_60px_-10px_rgba(201,162,76,0.5)]',
-    violet: 'from-accent-bronze/40 to-accent-bronze/5 border-accent-bronze/40 shadow-[0_0_60px_-10px_rgba(154,123,48,0.5)]'
+    blue: 'from-accent-gold/25 to-transparent border-accent-gold/30',
+    violet: 'from-accent-bronze/25 to-transparent border-accent-bronze/30'
   };
   return (
     <div className={`relative flex h-44 w-44 items-center justify-center rounded-full border bg-gradient-to-br backdrop-blur-md sm:h-56 sm:w-56 ${colors[tone]}`}>

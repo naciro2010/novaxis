@@ -204,10 +204,7 @@ export default function SolutionsSection() {
         />
 
         {/* Flagship */}
-        <div className="relative mt-16 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-sm hairline">
-          <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-accent-gold/20 blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-accent-bronze/15 blur-3xl" />
-
+        <div className="relative mt-16 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm hairline">
           <div className="relative grid gap-10 p-8 sm:p-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-accent-gold">
@@ -306,7 +303,7 @@ export default function SolutionsSection() {
                   <motion.div
                     animate={{ width: `${state === 'idle' ? 0 : progress}%` }}
                     transition={{ duration: 0.2 }}
-                    className="h-full bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne"
+                    className="h-full bg-accent-gold"
                   />
                 </div>
 
