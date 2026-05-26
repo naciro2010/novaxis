@@ -1,11 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 import DecryptText from './DecryptText';
-import BrainCanvas from './BrainCanvas';
 import { ArrowRight, Play, MapPin } from 'lucide-react';
+
+const NetworkScene = dynamic(() => import('./NetworkScene'), { ssr: false });
 
 const ROTATING = {
   fr: ['finance', 'comptabilité', 'conformité'],
@@ -27,14 +29,14 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink-950 pt-28"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-28"
     >
-      {/* Halo focal + cerveau de neurones (la pièce maîtresse du hero). */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.12),transparent_62%)]" />
+      {/* Halo focal + atome 3D (pièce maîtresse du hero), par-dessus le
+          réseau de neurones global qui transparaît derrière. */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.14),transparent_62%)]" />
       <div className="absolute inset-0 -z-10">
-        <BrainCanvas />
+        <NetworkScene />
       </div>
-      {/* Fond la silhouette en bas pour amorcer la transition vers le champ global. */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-ink-950" />
 
       <div className="mx-auto w-full max-w-7xl px-5">
