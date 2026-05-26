@@ -5,6 +5,7 @@ import { LocaleProvider } from '@/lib/i18n';
 import { BRAND } from '@/lib/brand';
 import SmoothScroll from '@/components/SmoothScroll';
 import SiteBackground from '@/components/SiteBackground';
+import Preloader from '@/components/Preloader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" className={`${inter.variable} ${jetbrains.variable}`}>
       <body className="bg-ink-950 text-bone antialiased">
         <LocaleProvider>
+          <Preloader />
           <SiteBackground />
           <SmoothScroll>
             {children}
