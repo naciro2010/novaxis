@@ -18,10 +18,21 @@ const ROTATING = {
 export default function Hero() {
   const { t, locale } = useI18n();
   const [wordIdx, setWordIdx] = useState(0);
+  // L'atome 3D du hero n'est monté que sur desktop : sur mobile, on évite un
+  // second contexte WebGL (le réseau neuronal global suffit) — économie GPU/batterie.
+  const [showAtom, setShowAtom] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => setWordIdx((i) => (i + 1) % 3), 2200);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const apply = () => setShowAtom(mq.matches);
+    apply();
+    mq.addEventListener('change', apply);
+    return () => mq.removeEventListener('change', apply);
   }, []);
 
   const word = ROTATING[locale][wordIdx];
@@ -34,9 +45,11 @@ export default function Hero() {
       {/* Halo focal + atome 3D (pièce maîtresse du hero), par-dessus le
           réseau de neurones global qui transparaît derrière. */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.14),transparent_62%)]" />
-      <div className="absolute inset-0 -z-10">
-        <NetworkScene />
-      </div>
+      {showAtom && (
+        <div className="absolute inset-0 -z-10">
+          <NetworkScene />
+        </div>
+      )}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-ink-950" />
 
       <div className="mx-auto w-full max-w-7xl px-5">
@@ -94,7 +107,7 @@ export default function Hero() {
               <ArrowRight size={16} className="relative z-10 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="#solutions"
+              href="#product"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-bone backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/[0.06] active:scale-[0.98]"
             >
               <Play size={14} className="text-accent-emerald" />

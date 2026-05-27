@@ -5,10 +5,22 @@ import { useI18n } from '@/lib/i18n';
 import SectionHeader from './SectionHeader';
 import { Quote } from 'lucide-react';
 
-const LOGOS = ['CDG Capital', 'MADAEF', 'OCP Group', 'BMCE Bank', 'AttijariWafa', 'Royal Air Maroc', 'Maroc Telecom', 'Saham'];
+// Secteurs visés (et non des clients nommés) : on affiche l'ambition sectorielle
+// sans laisser entendre une caution commerciale qui n'existe pas encore.
+const SECTOR_KEYS = [
+  'trust.sector.bank',
+  'trust.sector.insurance',
+  'trust.sector.industry',
+  'trust.sector.retail',
+  'trust.sector.telecom',
+  'trust.sector.energy',
+  'trust.sector.health',
+  'trust.sector.public'
+];
 
 export default function TrustSection() {
   const { t } = useI18n();
+  const sectors = SECTOR_KEYS.map((k) => t(k));
 
   return (
     <section className="relative py-32 sm:py-40">
@@ -17,21 +29,23 @@ export default function TrustSection() {
           eyebrow={t('trust.eyebrow')}
           title={
             <span>
-              {t('trust.title').split('.')[0]}.{' '}
-              <span className="text-accent-gold">
-                Avec preuves.
-              </span>
+              {t('trust.title.lead')}{' '}
+              <span className="text-accent-gold">{t('trust.title.accent')}</span>
             </span>
           }
         />
 
-        {/* Logo marquee */}
-        <div className="mt-12 overflow-hidden marquee-mask">
+        <div className="mt-10 font-mono text-[10px] uppercase tracking-[0.24em] text-ash/80">
+          {t('trust.sectors.label')}
+        </div>
+
+        {/* Sector marquee */}
+        <div className="mt-5 overflow-hidden marquee-mask">
           <div className="flex w-max animate-marquee gap-12">
-            {[...LOGOS, ...LOGOS].map((l, i) => (
+            {[...sectors, ...sectors].map((l, i) => (
               <div
                 key={`${l}-${i}`}
-                className="shrink-0 font-display text-2xl font-bold uppercase tracking-tight text-bone/40 transition-colors hover:text-bone/80"
+                className="shrink-0 font-display text-xl font-bold uppercase tracking-tight text-bone/45 transition-colors hover:text-bone/80 sm:text-2xl"
               >
                 {l}
               </div>
@@ -39,7 +53,7 @@ export default function TrustSection() {
           </div>
         </div>
 
-        {/* Testimonial */}
+        {/* Founder commitment */}
         <motion.figure
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,10 +66,15 @@ export default function TrustSection() {
             “{t('trust.quote')}”
           </blockquote>
           <figcaption className="mt-8 flex items-center gap-4">
-            <span className="block h-12 w-12 rounded-full bg-gradient-to-br from-accent-gold to-accent-bronze" />
+            <img
+              src="/team/mohamed-ennaciri.png"
+              alt="Mohamed Ennaciri"
+              loading="lazy"
+              className="h-12 w-12 rounded-full object-cover ring-1 ring-accent-gold/40"
+            />
             <div>
               <div className="font-display text-sm font-bold text-bone">{t('trust.quote.author')}</div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-ash">Rabat · 2026</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-ash">{t('trust.quote.role')}</div>
             </div>
           </figcaption>
         </motion.figure>

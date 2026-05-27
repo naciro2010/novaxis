@@ -9,7 +9,8 @@ import { cn } from '@/lib/utils';
 const NAV_KEYS: { key: string; href: string }[] = [
   { key: 'nav.vision', href: '#vision' },
   { key: 'nav.solutions', href: '#solutions' },
-  { key: 'nav.partners', href: '#partners' },
+  { key: 'nav.product', href: '#product' },
+  { key: 'nav.pricing', href: '#pricing' },
   { key: 'nav.security', href: '#security' },
   { key: 'nav.contact', href: '#contact' }
 ];
