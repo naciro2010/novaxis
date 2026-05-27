@@ -21,7 +21,7 @@ export default function ComparisonSection() {
   const { t } = useI18n();
 
   return (
-    <section className="relative py-32 sm:py-40">
+    <section id="comparatif" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeader
           eyebrow={t('why.eyebrow')}

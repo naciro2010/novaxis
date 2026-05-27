@@ -57,7 +57,7 @@ export default function TeamSection() {
   const { t } = useI18n();
 
   return (
-    <section className="relative py-32 sm:py-40">
+    <section id="team" className="relative py-32 sm:py-40">
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
           eyebrow={t('team.eyebrow')}

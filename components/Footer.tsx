@@ -3,7 +3,7 @@
 import { useI18n } from '@/lib/i18n';
 import { BRAND } from '@/lib/brand';
 import Logo from './Logo';
-import { Linkedin, Github } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const { t } = useI18n();
@@ -20,30 +20,29 @@ export default function Footer() {
       ]
     },
     {
+      title: t('footer.col.product'),
+      links: [
+        { label: t('nav.product'), href: '#product' },
+        { label: t('nav.pricing'), href: '#pricing' },
+        { label: t('why.eyebrow.short'), href: '#comparatif' },
+        { label: t('solutions.flagship.name'), href: '#solutions' }
+      ]
+    },
+    {
       title: t('footer.col.company'),
       links: [
         { label: t('nav.vision'), href: '#vision' },
         { label: t('nav.partners'), href: '#partners' },
-        { label: t('nav.security'), href: '#security' },
-        { label: 'Careers', href: '#' }
-      ]
-    },
-    {
-      title: t('footer.col.resources'),
-      links: [
-        { label: 'Blog', href: '#' },
-        { label: 'Documentation', href: '#' },
-        { label: 'Changelog', href: '#' },
-        { label: 'GitHub', href: '#' }
+        { label: t('team.eyebrow.short'), href: '#team' },
+        { label: t('nav.security'), href: '#security' }
       ]
     },
     {
       title: t('footer.col.legal'),
       links: [
-        { label: 'CNDP — 09-08', href: '#' },
-        { label: 'CGV', href: '#' },
-        { label: 'Mentions légales', href: '#' },
-        { label: 'Sécurité', href: '#security' }
+        { label: 'CNDP — 09-08', href: '#security' },
+        { label: t('nav.security'), href: '#security' },
+        { label: t('nav.contact'), href: '#contact' }
       ]
     }
   ];
@@ -57,26 +56,24 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-sm text-sm text-ash">{t('footer.tagline')}</p>
-            <div className="mt-6 space-y-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ash/70">
+            <div className="mt-6 space-y-1 font-mono text-[11px] uppercase tracking-[0.18em] text-ash/80">
               <div>{BRAND.legal} · Rabat Agdal, MA</div>
-              <div>RC Rabat · ICE 00XXXX</div>
-              <div>{BRAND.email} · +212 5 22 00 00 00</div>
+              <div>
+                <a href={`mailto:${BRAND.email}`} className="transition-colors hover:text-bone">
+                  {BRAND.email}
+                </a>
+              </div>
             </div>
 
             <div className="mt-6 flex items-center gap-2">
               <a
-                href="#"
+                href={BRAND.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-ash transition-colors hover:border-white/30 hover:text-bone"
               >
                 <Linkedin size={15} />
-              </a>
-              <a
-                href="#"
-                aria-label="GitHub"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-ash transition-colors hover:border-white/30 hover:text-bone"
-              >
-                <Github size={15} />
               </a>
             </div>
           </div>

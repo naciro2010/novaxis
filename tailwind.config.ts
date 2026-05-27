@@ -27,6 +27,15 @@ const config: Config = {
           // Rouge du drapeau marocain (souveraineté)
           rouge: '#C1272D'
         },
+        // Palette fonctionnelle pour la data-viz et les états (distincte de l'or décoratif).
+        data: {
+          blue: '#3B82F6',
+          sky: '#38BDF8',
+          green: '#10B981',
+          amber: '#F59E0B',
+          rose: '#F43F5E',
+          violet: '#8B5CF6'
+        },
         bone: '#F5F5F7',
         ash: '#9A9AA6'
       },

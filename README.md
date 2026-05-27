@@ -1,4 +1,4 @@
-# NOVAXIS — Site one-page
+# Novaxium — Site one-page
 
 L'axe nouveau de la finance augmentée. Comptabilité × Intelligence — Souveraineté marocaine.
 
@@ -37,30 +37,43 @@ app/
   globals.css
 components/
   SiteBackground.tsx     # monte le réseau de neurones en fond fixe global
-  NeuralScene.tsx        # réseau de neurones R3F (nœuds + synapses + impulsions)
+  NeuralScene.tsx        # réseau de neurones R3F (fond global)
+  NetworkScene.tsx       # atome 3D du hero (monté sur desktop uniquement)
+  Preloader.tsx
   Navbar.tsx
   Hero.tsx
   FusionSection.tsx
   VisionSection.tsx
-  SolutionsSection.tsx   # + démo OCR live
+  SolutionsSection.tsx   # + démo OCR (simulation)
+  ProductSection.tsx     # maquette de tableau de bord + calculateur ROI
   PartnersSection.tsx
   SecuritySection.tsx
-  WhyNovaxisSection.tsx
+  ComparisonSection.tsx
   TeamSection.tsx
   StatsSection.tsx
   TrustSection.tsx
-  CTASection.tsx
+  PricingSection.tsx     # 3 paliers, sur devis
+  CTASection.tsx         # formulaire -> /api/contact
   Footer.tsx
-  CustomCursor.tsx
   SmoothScroll.tsx
   DecryptText.tsx
   Counter.tsx
   SectionHeader.tsx
   Logo.tsx
+app/
+  api/contact/route.ts   # réception des demandes de démo (webhook optionnel)
 lib/
   i18n.tsx          # FR / EN / AR
+  brand.ts          # source unique de l'identité de marque
   utils.ts
 ```
+
+## Formulaire de contact
+
+Les demandes de démo sont envoyées en `POST` vers `/api/contact`. Si la variable
+d'environnement `CONTACT_WEBHOOK_URL` est définie (Make, Zapier, n8n, Slack…), la
+demande y est relayée ; sinon le client bascule sur un lien `mailto:` afin de ne
+perdre aucun lead.
 
 ## Personnalisation
 

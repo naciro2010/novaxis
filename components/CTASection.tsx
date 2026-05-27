@@ -3,19 +3,40 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
-import { ArrowRight, CheckCircle2, Loader2, MapPin } from 'lucide-react';
+import { BRAND } from '@/lib/brand';
+import { ArrowRight, CheckCircle2, Loader2, MapPin, AlertTriangle } from 'lucide-react';
 
 export default function CTASection() {
   const { t } = useI18n();
-  const [state, setState] = useState<'idle' | 'sending' | 'sent'>('idle');
+  const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [form, setForm] = useState({ name: '', email: '', company: '', phone: '' });
+
+  const mailto = () => {
+    const subject = encodeURIComponent(`Demande de démo — ${form.company || form.name || ''}`.trim());
+    const lines = [
+      `Nom: ${form.name}`,
+      `Email: ${form.email}`,
+      `Entreprise: ${form.company}`,
+      form.phone && `Téléphone: ${form.phone}`
+    ].filter(Boolean);
+    return `mailto:${BRAND.email}?subject=${subject}&body=${encodeURIComponent(lines.join('\n'))}`;
+  };
 
   const handle = async (e: FormEvent) => {
     e.preventDefault();
     if (state === 'sending') return;
     setState('sending');
-    await new Promise((r) => setTimeout(r, 900));
-    setState('sent');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      if (!res.ok) throw new Error(`status ${res.status}`);
+      setState('sent');
+    } catch {
+      setState('error');
+    }
   };
 
   return (
@@ -88,11 +109,11 @@ export default function CTASection() {
           <div className="col-span-full">
             <button
               type="submit"
-              disabled={state !== 'idle'}
+              disabled={state === 'sending' || state === 'sent'}
               className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold to-accent-bronze p-px transition-all hover:shadow-[0_8px_34px_-14px_rgba(201,162,76,0.5)] active:scale-[0.99] disabled:opacity-60 disabled:active:scale-100"
             >
               <span className="relative flex items-center justify-center gap-2 rounded-[14px] bg-ink-900 px-6 py-4 text-sm font-semibold text-bone transition-colors group-hover:bg-ink-800">
-                {state === 'idle' && (
+                {(state === 'idle' || state === 'error') && (
                   <>
                     {t('cta.form.submit')}
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -112,6 +133,16 @@ export default function CTASection() {
                 )}
               </span>
             </button>
+
+            {state === 'error' && (
+              <p className="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs text-accent-rouge">
+                <AlertTriangle size={13} />
+                {t('cta.form.error')}
+                <a href={mailto()} className="font-semibold text-bone underline underline-offset-2 hover:text-accent-gold">
+                  {t('cta.form.fallback')}
+                </a>
+              </p>
+            )}
           </div>
         </motion.form>
 
@@ -159,7 +190,7 @@ function Input({
         onChange={(e) => onChange(e.target.value)}
         required={required}
         autoComplete={autoComplete}
-        className="w-full bg-transparent text-sm text-bone placeholder:text-ash/40 focus:outline-none"
+        className="w-full bg-transparent text-sm text-bone placeholder:text-ash/60 focus:outline-none"
       />
     </label>
   );
