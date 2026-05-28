@@ -3,6 +3,7 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
+import { useCanvasActive } from '@/lib/useCanvasActive';
 
 const GOLD = new THREE.Color('#C9A24C');
 const CHAMPAGNE = new THREE.Color('#E4C77E');
@@ -240,14 +241,20 @@ function Network() {
 }
 
 export default function NeuralScene() {
+  // Fond plein écran : toujours « en vue », mais on coupe le rendu quand
+  // l'onglet est masqué (économie GPU/batterie, pas de saut au retour).
+  const { ref, active } = useCanvasActive<HTMLDivElement>();
   return (
-    <Canvas
-      camera={{ position: [0, 0, 7], fov: 55 }}
-      dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-      style={{ background: 'transparent' }}
-    >
-      <Network />
-    </Canvas>
+    <div ref={ref} className="h-full w-full">
+      <Canvas
+        frameloop={active ? 'always' : 'never'}
+        camera={{ position: [0, 0, 7], fov: 55 }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+        style={{ background: 'transparent' }}
+      >
+        <Network />
+      </Canvas>
+    </div>
   );
 }

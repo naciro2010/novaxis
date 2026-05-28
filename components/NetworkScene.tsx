@@ -3,6 +3,7 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
+import { useCanvasActive } from '@/lib/useCanvasActive';
 
 const GOLD = '#C9A24C';
 const CHAMPAGNE = '#E4C77E';
@@ -162,15 +163,21 @@ function AtomSystem() {
 }
 
 export default function NetworkScene() {
+  // L'atome n'est visible que dans le hero : on gèle son rendu dès qu'il sort
+  // du champ (scroll) ou que l'onglet passe en arrière-plan.
+  const { ref, active } = useCanvasActive<HTMLDivElement>();
   return (
-    <Canvas
-      camera={{ position: [0, 0, 7], fov: 50 }}
-      dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-      style={{ background: 'transparent' }}
-    >
-      <ambientLight intensity={0.5} />
-      <AtomSystem />
-    </Canvas>
+    <div ref={ref} className="h-full w-full">
+      <Canvas
+        frameloop={active ? 'always' : 'never'}
+        camera={{ position: [0, 0, 7], fov: 50 }}
+        dpr={[1, 1.5]}
+        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+        style={{ background: 'transparent' }}
+      >
+        <ambientLight intensity={0.5} />
+        <AtomSystem />
+      </Canvas>
+    </div>
   );
 }
