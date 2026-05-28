@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 import DecryptText from './DecryptText';
 import { ArrowRight, Play, MapPin } from 'lucide-react';
@@ -140,16 +140,18 @@ export default function Hero() {
 function RotatingWord({ word }: { word: string }) {
   return (
     <span className="relative inline-block min-w-[3ch] overflow-hidden align-baseline">
-      <motion.span
-        key={word}
-        initial={{ y: '110%', opacity: 0, filter: 'blur(8px)' }}
-        animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        exit={{ y: '-110%', opacity: 0 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="inline-block bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne bg-clip-text text-transparent"
-      >
-        {word}
-      </motion.span>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={word}
+          initial={{ y: '100%', opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: '-100%', opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne bg-clip-text text-transparent"
+        >
+          {word}
+        </motion.span>
+      </AnimatePresence>
     </span>
   );
 }
