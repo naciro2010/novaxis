@@ -5,9 +5,10 @@ import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useCanvasActive } from '@/lib/useCanvasActive';
 
-const GOLD = new THREE.Color('#C9A24C');
-const CHAMPAGNE = new THREE.Color('#E4C77E');
-const BRONZE = new THREE.Color('#9A7B30');
+// Palette signature iris / bleu électrique / violet clair (esprit Revolut).
+const GOLD = new THREE.Color('#7C5CFF'); // iris
+const CHAMPAGNE = new THREE.Color('#A78BFF'); // violet clair
+const BRONZE = new THREE.Color('#4D7CFF'); // bleu électrique
 
 type Net = {
   nodes: THREE.Vector3[];

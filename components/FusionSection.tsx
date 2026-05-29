@@ -100,7 +100,7 @@ export default function FusionSection() {
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 -m-10 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.16),transparent_60%)] blur-2xl" />
+                <div className="absolute inset-0 -m-10 rounded-full bg-[radial-gradient(circle,rgba(124,92,255,0.16),transparent_60%)] blur-2xl" />
                 <div className="relative flex h-44 w-44 items-center justify-center rounded-full border border-white/15 bg-gradient-to-br from-accent-gold/25 to-accent-bronze/15 backdrop-blur-xl sm:h-56 sm:w-56">
                   <div className="absolute inset-3 rounded-full border border-white/10" />
                   <div className="text-center">
@@ -133,9 +133,9 @@ export default function FusionSection() {
               />
               <defs>
                 <linearGradient id="fusion-grad" x1="0" x2="1">
-                  <stop offset="0" stopColor="#C9A24C" />
-                  <stop offset="0.5" stopColor="#E4C77E" />
-                  <stop offset="1" stopColor="#9A7B30" />
+                  <stop offset="0" stopColor="#7C5CFF" />
+                  <stop offset="0.5" stopColor="#A78BFF" />
+                  <stop offset="1" stopColor="#4D7CFF" />
                 </linearGradient>
               </defs>
             </svg>

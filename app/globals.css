@@ -5,15 +5,22 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400&display=swap');
 
 :root {
-  --bg: #090C15;
-  --bg-deep: #05070D;
-  --bone: #F5F5F7;
-  --ash: #9A9AA6;
-  --gold: #C9A24C;
-  --champagne: #E4C77E;
-  --bronze: #9A7B30;
-  --emerald: #10B981;
+  --bg: #0A0A18;
+  --bg-deep: #050510;
+  --bone: #F5F6FB;
+  --ash: #9A9AB0;
+  /* Palette signature iris/indigo/violet (esprit Revolut). Les variables historiques
+     (--gold/--champagne/--bronze) sont conservées mais repointées pour compatibilité. */
+  --gold: #7C5CFF;
+  --champagne: #A78BFF;
+  --bronze: #5B4DE0;
+  --iris: #7C5CFF;
+  --electric: #4D7CFF;
+  --violet: #A78BFF;
+  --magenta: #F45C9C;
+  --emerald: #34D399;
   --rouge: #C1272D;
+  --brand-gradient: linear-gradient(120deg, #4D7CFF 0%, #7C5CFF 45%, #A78BFF 75%, #F45C9C 100%);
 }
 
 * {
@@ -21,9 +28,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus clavier visible (accessibilité) — anneau or */
+/* Focus clavier visible (accessibilité) — anneau iris */
 :focus-visible {
-  outline: 2px solid rgba(201, 162, 76, 0.9);
+  outline: 2px solid rgba(124, 92, 255, 0.9);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -45,11 +52,11 @@ textarea {
   touch-action: manipulation;
 }
 
-/* Scrollbar sobre (or discret sur navy) */
+/* Scrollbar sobre (iris discret sur encre) */
 @media (pointer: fine) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(201, 162, 76, 0.3) transparent;
+    scrollbar-color: rgba(124, 92, 255, 0.3) transparent;
   }
   ::-webkit-scrollbar {
     width: 10px;
@@ -59,13 +66,13 @@ textarea {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(201, 162, 76, 0.25);
+    background: rgba(124, 92, 255, 0.25);
     border-radius: 9999px;
     border: 3px solid transparent;
     background-clip: content-box;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(201, 162, 76, 0.45);
+    background: rgba(124, 92, 255, 0.5);
     background-clip: content-box;
   }
 }
@@ -90,7 +97,7 @@ html.lenis, html.lenis body {
 }
 
 ::selection {
-  background: rgba(201,162,76,0.32);
+  background: rgba(124,92,255,0.34);
   color: #fff;
 }
 
@@ -149,3 +156,69 @@ body {
 
 /* Section base */
 section { position: relative; }
+
+/* ── Signature Revolut : dégradés animés, lueurs, brillance ─────────────── */
+
+/* Texte en dégradé animé (déplacement lent du dégradé de marque). */
+.text-gradient {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-animated {
+  background-image: var(--brand-gradient);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 7s ease infinite;
+}
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Bordure en dégradé fin (cartes premium). */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--brand-gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Balayage lumineux au survol (boutons / cartes). */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: translateX(-160%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.shine:hover::after {
+  transform: translateX(220%);
+}
+
+/* Reduce motion : on coupe les animations décoratives. */
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient-animated { animation: none; background-position: 0% 50%; }
+}

@@ -53,7 +53,7 @@ export default function PricingSection() {
                 className={cn(
                   'relative flex flex-col rounded-3xl border p-7 sm:p-8',
                   tier.featured
-                    ? 'border-accent-gold/40 bg-gradient-to-b from-accent-gold/[0.08] to-white/[0.02] shadow-[0_24px_70px_-30px_rgba(201,162,76,0.5)] lg:-my-3'
+                    ? 'border-accent-gold/40 bg-gradient-to-b from-accent-gold/[0.08] to-white/[0.02] shadow-[0_24px_70px_-30px_rgba(124,92,255,0.5)] lg:-my-3'
                     : 'border-white/10 bg-white/[0.02]'
                 )}
               >
@@ -94,7 +94,7 @@ export default function PricingSection() {
                   className={cn(
                     'group mt-8 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all active:scale-[0.98]',
                     tier.featured
-                      ? 'bg-accent-gold text-ink-900 hover:shadow-[0_8px_30px_-12px_rgba(201,162,76,0.7)]'
+                      ? 'bg-accent-gold text-ink-900 hover:shadow-[0_8px_30px_-12px_rgba(124,92,255,0.7)]'
                       : 'border border-white/15 bg-white/[0.03] text-bone hover:border-white/30 hover:bg-white/[0.06]'
                   )}
                 >

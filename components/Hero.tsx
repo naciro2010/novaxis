@@ -44,7 +44,7 @@ export default function Hero() {
     >
       {/* Halo focal + atome 3D (pièce maîtresse du hero), par-dessus le
           réseau de neurones global qui transparaît derrière. */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.14),transparent_62%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.14),transparent_62%)]" />
       {showAtom && (
         <div className="absolute inset-0 -z-10">
           <NetworkScene />
@@ -78,7 +78,7 @@ export default function Hero() {
                 <RotatingWord word={word} />
                 <span aria-hidden className="text-ash">]</span>
               </span>
-              <span className="ml-[0.2em] bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne bg-clip-text text-transparent">
+              <span className="text-gradient-animated ml-[0.2em]">
                 {t('hero.title.suffix')}
               </span>
             </span>
@@ -147,7 +147,7 @@ function RotatingWord({ word }: { word: string }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: '-100%', opacity: 0 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-block bg-gradient-to-r from-accent-gold via-accent-bronze to-accent-champagne bg-clip-text text-transparent"
+          className="text-gradient-animated inline-block"
         >
           {word}
         </motion.span>

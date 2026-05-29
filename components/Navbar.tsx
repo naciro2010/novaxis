@@ -41,7 +41,7 @@ export default function Navbar() {
           className={cn(
             'flex w-full items-center justify-between rounded-full border border-white/5 px-4 py-2.5 transition-all duration-300',
             scrolled
-              ? 'bg-ink-900/70 backdrop-blur-xl shadow-[0_10px_40px_-20px_rgba(201,162,76,0.4)]'
+              ? 'bg-ink-900/70 backdrop-blur-xl shadow-[0_10px_40px_-20px_rgba(124,92,255,0.4)]'
               : 'bg-transparent'
           )}
         >

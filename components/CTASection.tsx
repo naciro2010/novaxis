@@ -42,7 +42,7 @@ export default function CTASection() {
   return (
     <section id="contact" className="relative overflow-hidden py-32 sm:py-44">
       {/* Voile focal discret par-dessus le réseau neuronal global. */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.10),transparent_62%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.10),transparent_62%)]" />
 
       <div className="mx-auto max-w-5xl px-5 text-center">
         <motion.h2
@@ -110,7 +110,7 @@ export default function CTASection() {
             <button
               type="submit"
               disabled={state === 'sending' || state === 'sent'}
-              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold to-accent-bronze p-px transition-all hover:shadow-[0_8px_34px_-14px_rgba(201,162,76,0.5)] active:scale-[0.99] disabled:opacity-60 disabled:active:scale-100"
+              className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-accent-gold to-accent-bronze p-px transition-all hover:shadow-[0_8px_34px_-14px_rgba(124,92,255,0.5)] active:scale-[0.99] disabled:opacity-60 disabled:active:scale-100"
             >
               <span className="relative flex items-center justify-center gap-2 rounded-[14px] bg-ink-900 px-6 py-4 text-sm font-semibold text-bone transition-colors group-hover:bg-ink-800">
                 {(state === 'idle' || state === 'error') && (

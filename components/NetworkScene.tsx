@@ -5,9 +5,9 @@ import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useCanvasActive } from '@/lib/useCanvasActive';
 
-const GOLD = '#C9A24C';
-const CHAMPAGNE = '#E4C77E';
-const BRONZE = '#9A7B30';
+const GOLD = '#7C5CFF';
+const CHAMPAGNE = '#A78BFF';
+const BRONZE = '#4D7CFF';
 const BONE = '#F5F5F7';
 
 type Orbit = {
