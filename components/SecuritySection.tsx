@@ -67,7 +67,7 @@ export default function SecuritySection() {
 function ShieldArt() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-md">
-      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(201,162,76,0.12),transparent_60%)] blur-2xl" />
+      <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(124,92,255,0.12),transparent_60%)] blur-2xl" />
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
@@ -89,12 +89,12 @@ function ShieldArt() {
           <svg width="240" height="280" viewBox="0 0 240 280" fill="none">
             <defs>
               <linearGradient id="shield-fill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#C9A24C" stopOpacity="0.35" />
-                <stop offset="1" stopColor="#E4C77E" stopOpacity="0.15" />
+                <stop offset="0" stopColor="#7C5CFF" stopOpacity="0.35" />
+                <stop offset="1" stopColor="#A78BFF" stopOpacity="0.15" />
               </linearGradient>
               <linearGradient id="shield-edge" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#9A7B30" />
-                <stop offset="1" stopColor="#E4C77E" />
+                <stop offset="0" stopColor="#4D7CFF" />
+                <stop offset="1" stopColor="#A78BFF" />
               </linearGradient>
             </defs>
             <path

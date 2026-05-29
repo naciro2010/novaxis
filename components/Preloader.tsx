@@ -72,7 +72,7 @@ export default function Preloader() {
         hiding && 'pointer-events-none opacity-0'
       )}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,76,0.10),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,92,255,0.10),transparent_60%)]" />
 
       <div className="relative mb-7 flex h-3 w-3 items-center justify-center">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-gold/50" />
